@@ -8,7 +8,7 @@
             </h1>
             <form action="#" class="search-form">
                 <input type="search" placeholder="Search" class="search__input" />
-                <button class="search__button" type="button">0</button>
+                <button class="search__button" type="button">{% render 'search-icon'%}</button>
             </form>
             <div class="menu-icon">
                 <span class="menu-icon__hamburger">menu</span>
@@ -25,6 +25,7 @@
                 {% endfor %}
             </ul>
             <div class="header__cart">
+                <span class="cart__icon">{% render 'cart-icon'%}</span>
                 <a href="{{ routes.cart_url }}" class="full-unstyled-link link focus-inset" id="cart-icon-bubble">Cart
                     {%- if cart != empty
                     -%}
@@ -56,6 +57,127 @@
 ]
 }
 {% endschema %}
+
+<style>
+    /*Desktop*/
+    .header-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0 3rem;
+        padding-top: 50px;
+        padding-bottom: 10px;
+        gap: 30px;
+    }
+
+    .header__logo,
+    .header__menu {
+        margin: 0;
+    }
+
+    .header__top,
+    .header__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__menu {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .header__menu li a,
+    .header__cart a {
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .header__cart{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .header__logo {
+        font-weight: 700;
+        color: rgb(89, 89, 89);
+        font-size: 34px;
+    }
+
+    .cart-count {
+        padding: 0 5px;
+    }
+
+    .search-form {
+        position: relative;
+    }
+
+    .search__input {
+        width: 250px;
+        padding: 0 10px;
+        height: 40px;
+        border-radius: 30px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .search__input::placeholder {
+        color: #88c8bc;
+        font-weight: lighter;
+    }
+
+    .search__input:focus {
+        outline: none;
+        border-color: none;
+        box-shadow: none;
+    }
+
+    .search__button {
+        color: #ffff;
+        cursor: pointer;
+        height: 40px;
+        width: 40px;
+        background: #88c8bc;
+        border: 1px solid #88c8bc;
+        border-radius: 40px;
+        position: absolute;
+        right: 0px;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    /*Tablet*/
+    @media screen and (max-width: 990px) {
+        .header__top {
+            flex-wrap: wrap;
+        }
+
+        .header__bottom {
+            display: none;
+        }
+
+        .menu-icon {
+            display: block;
+        }
+    }
+
+    /*Mobile*/
+    @media screen and (max-width: 750px) {
+        .search-form {
+            order: 3;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .search-form input {
+            width: inherit;
+        }
+    }
+</style>
 
 <script type="application/ld+json">
     {
