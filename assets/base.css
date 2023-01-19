@@ -2955,9 +2955,3 @@ details-disclosure > details {
     outline: transparent solid 1px;
   }
 }
-
-.container{
-  max-width: 1140px;
-  padding: 0 3rem;
-  margin: auto;
-}
