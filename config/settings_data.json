@@ -1,5 +1,7 @@
 {
   "current": {
+    "type_header_font": "montserrat_n4",
+    "type_body_font": "rockwell_n4",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
