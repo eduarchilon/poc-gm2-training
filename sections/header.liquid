@@ -11,10 +11,11 @@
                 <button class="search__button" type="button">{% render 'search-icon'%}</button>
             </form>
             <div class="menu-icon">
-                <span class="menu-icon__hamburger">menu</span>
+                <span class="menu-icon__hamburger" id="menu-button">{% render 'icon-hamburger' %}</span>
             </div>
         </div>
         <div class="header__bottom">
+            <span class="menu-icon__close" id="menu-close">{% render 'icon-close' %}</span>
             <ul class="header__menu">
                 {% for link in section.settings.menu.links %}
                 <li>
@@ -25,7 +26,7 @@
                 {% endfor %}
             </ul>
             <div class="header__cart">
-                <span class="cart__icon">{% render 'cart-icon'%}</span>
+                <span class="cart-icon">{% render 'cart-icon' %}</span>
                 <a href="{{ routes.cart_url }}" class="full-unstyled-link link focus-inset" id="cart-icon-bubble">Cart
                     {%- if cart != empty
                     -%}
@@ -58,6 +59,29 @@
 }
 {% endschema %}
 
+<script>
+    const menuShow = document.getElementById('menu-button');
+    const menuClose = document.getElementById('menu-close');
+
+    const open = document.querySelector('.header__bottom')
+
+
+    let menuStatus = 1;
+
+    const menuDrawer = () => {
+        if (menuStatus == 1) {
+            open.style.right = '0px'
+            menuStatus = 0
+        } else {
+            open.style.right = '-270px'
+            menuStatus = 1
+        }
+    }
+
+    menuShow.addEventListener('click', menuDrawer);
+    menuClose.addEventListener('click', menuDrawer);
+</script>
+
 <style>
     /*Desktop*/
     .header-container {
@@ -65,7 +89,7 @@
         flex-direction: column;
         padding-top: 50px;
         padding-bottom: 10px;
-        gap: 35px;
+        gap: 45px;
     }
 
     .header__logo,
@@ -82,7 +106,7 @@
 
     .header__menu {
         display: flex;
-        gap: 25px;
+        gap: 30px;
         list-style: none;
         padding-left: 0;
     }
@@ -90,11 +114,11 @@
     .header__menu li a,
     .header__cart a {
         font-size: 12px;
-        letter-spacing: 2px;
+        letter-spacing: 3px;
         text-transform: uppercase;
     }
 
-    .header__cart{
+    .header__cart {
         display: flex;
         align-items: center;
         gap: 5px;
@@ -145,22 +169,91 @@
         right: 0px;
     }
 
-    .menu-icon {
+    .menu-icon,
+    .menu-icon__close {
         display: none;
     }
 
     /*Tablet*/
     @media screen and (max-width: 990px) {
+
+        .header-container {
+            padding-top: 28px;
+        }
+
+        .header {
+            position: relative;
+        }
+
         .header__top {
             flex-wrap: wrap;
         }
 
-        .header__bottom {
-            display: none;
+        .header__menu {
+            gap: 0;
         }
 
-        .menu-icon {
+        .header__menu,
+        .header__cart {
+            align-self: flex-start;
+            padding: 0 20px;
+            align-items: flex-start;
+        }
+
+        .menu-icon,
+        .menu-icon__close {
             display: block;
+            cursor: pointer;
+        }
+
+        .menu-icon__close {
+            align-self: end;
+            width: 25px;
+        }
+
+        .menu-icon__hamburger svg:active,
+        .menu-icon__close svg:active {
+            box-sizing: border-box;
+            padding: 2px;
+        }
+
+        .header__bottom,
+        .header__menu {
+            flex-direction: column;
+        }
+
+        .header__bottom .cart-icon svg {
+            filter: invert(50%);
+        }
+
+        .header__bottom {
+
+            font-family: var(--font-heading-family);
+            padding: 45px 20px 40px 20px;
+            background-color: black !important;
+            color: #fff;
+            position: fixed;
+            background-color: aliceblue;
+            height: 100vh;
+            top: 0;
+            right: -270px;
+            width: 270px;
+            justify-content: flex-start;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .header__bottom li a,
+        .header__bottom a {
+            text-transform: capitalize;
+            letter-spacing: 0;
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #ffffff80;
+            font-weight: 300;
+        }
+
+        .header__bottom a:hover{
+            color: #fff;
         }
     }
 
