@@ -11,11 +11,12 @@
                 <button class="search__button" type="button">{% render 'search-icon'%}</button>
             </form>
             <div class="menu-icon">
-                <span class="menu-icon__hamburger" id="menu-button">{% render 'icon-hamburger' %}</span>
+                <span class="menu-icon__hamburger" id="hamburger-button">{% render 'icon-hamburger' %}</span>
             </div>
         </div>
+        <div class="backdrop-container" id="backdrop-button"></div>
         <div class="header__bottom">
-            <span class="menu-icon__close" id="menu-close">{% render 'icon-close' %}</span>
+            <span class="menu-icon__close" id="close-menu-button">{% render 'icon-close' %}</span>
             <ul class="header__menu">
                 {% for link in section.settings.menu.links %}
                 <li>
@@ -47,39 +48,41 @@
 </header>
 
 {% schema %}
-{
-"name":"header",
-"settings":[
-{
-"type":"link_list",
-"id":"menu",
-"label":"t:sections.header.settings.menu.label"
-}
-]
-}
+    {
+        "name":"header",
+        "settings":[
+            {
+                "type":"link_list",
+                "id":"menu",
+                "label":"t:sections.header.settings.menu.label"
+            }
+        ]
+    }
 {% endschema %}
 
 <script>
-    const menuShow = document.getElementById('menu-button');
-    const menuClose = document.getElementById('menu-close');
+    const menuDrawer = document.querySelectorAll('#hamburger-button, #close-menu-button, #backdrop-button')
 
     const open = document.querySelector('.header__bottom')
-
+    const backdropContainer = document.querySelector('.backdrop-container')
 
     let menuStatus = 1;
 
-    const menuDrawer = () => {
+    const toogleMenu = () => {
         if (menuStatus == 1) {
             open.style.right = '0px'
+            backdropContainer.style.display = 'block'
             menuStatus = 0
         } else {
             open.style.right = '-270px'
+            backdropContainer.style.display = 'none'
             menuStatus = 1
         }
     }
 
-    menuShow.addEventListener('click', menuDrawer);
-    menuClose.addEventListener('click', menuDrawer);
+    menuDrawer.forEach(event => {
+        event.addEventListener('click', toogleMenu)
+    });
 </script>
 
 <style>
@@ -227,7 +230,7 @@
         }
 
         .header__bottom {
-
+            z-index: 1;
             font-family: var(--font-heading-family);
             padding: 45px 20px 40px 20px;
             background-color: black !important;
@@ -239,7 +242,7 @@
             right: -270px;
             width: 270px;
             justify-content: flex-start;
-            transition: all 0.5s ease-in-out;
+            transition: all 0.2s ease-in-out;
         }
 
         .header__bottom li a,
@@ -252,8 +255,20 @@
             font-weight: 300;
         }
 
-        .header__bottom a:hover{
+        .header__bottom a:hover {
             color: #fff;
+        }
+
+        .backdrop-container {
+            transition: all 2s ease;
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            background-color: #00000083;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
         }
     }
 
