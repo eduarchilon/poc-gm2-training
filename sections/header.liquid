@@ -48,16 +48,16 @@
 </header>
 
 {% schema %}
-    {
-        "name":"header",
-        "settings":[
-            {
-                "type":"link_list",
-                "id":"menu",
-                "label":"t:sections.header.settings.menu.label"
-            }
-        ]
-    }
+{
+"name":"header",
+"settings":[
+{
+"type":"link_list",
+"id":"menu",
+"label":"t:sections.header.settings.menu.label"
+}
+]
+}
 {% endschema %}
 
 <script>
@@ -92,12 +92,15 @@
         flex-direction: column;
         padding-top: 50px;
         padding-bottom: 10px;
-        gap: 45px;
     }
 
     .header__logo,
     .header__menu {
         margin: 0;
+    }
+
+    .header__top{
+        margin-bottom: 45px;
     }
 
     .header__top,
@@ -190,6 +193,7 @@
 
         .header__top {
             flex-wrap: wrap;
+            margin-bottom: 0;
         }
 
         .header__menu {
@@ -261,7 +265,6 @@
 
         .backdrop-container {
             transition: all 2s ease;
-            display: none;
             width: 100vw;
             height: 100vh;
             background-color: #00000083;

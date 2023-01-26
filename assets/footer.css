@@ -12,11 +12,16 @@ footer {
     font-size: 14px;
 }
 
+.footer__top-column>p,
+.footer h5 {
+    line-height: 25px;
+}
 
-.footer h5,
-.footer ul,
-.footer__top div p,
-.footer__bottom p {
+.footer li,
+.footer a,
+.footer p,
+.footer span {
+    color: #595959;
     font-weight: 300;
     font-family: var(--font-heading-family);
 }
@@ -24,14 +29,14 @@ footer {
 .footer__top {
     display: flex;
     gap: 40px;
-    padding-bottom: 55px;
+    padding-bottom: 56px;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .footer__top .footer__top-column {
     width: 180px;
-    flex-basis: 0px;
+    flex-basis: 0;
     flex-grow: 1;
     max-width: 100%;
 }
@@ -45,6 +50,7 @@ footer {
 
 footer li {
     margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .footer ul {
@@ -52,12 +58,12 @@ footer li {
     padding: 0;
 }
 
-.footer__bottom p {
+.footer-copy {
     text-align: center;
 }
 
 .footer__bottom {
-    padding: 1.5rem 0;
+    padding: 1.65rem 0;
 }
 
 /*Tablet*/
@@ -74,7 +80,7 @@ footer li {
         gap: 15px;
     }
 
-    .footer__top .footer__top-column{
+    .footer__top .footer__top-column {
         width: 100%;
     }
 }

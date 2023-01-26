@@ -3,55 +3,35 @@
 <footer class="footer">
     <div class="container footer-container">
         <div class="footer__top">
+            {% for block in section.blocks %}
             <div class="footer__top-column">
-                <h5>ABOUT FOOTWEAR</h5>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic
-                    life</p>
-                <div>A  B  C  D</div>
-            </div>
-            <div class="footer__top-column">
-                <h5>CUSTOMER CARE</h5>
+                <h5>{{ section.settings.heading }}</h5>
+                {% if block.settings.text != blank %}
+                <p>{{block.settings.text}}</p>
+                {% endif %}
+                {% if block.settings.menu != blank %}
                 <ul>
-                    <li>CONTACT</li>
-                    <li>RETURNS/EXCHANGE</li>
-                    <li>GIFT VOUCHER</li>
-                    <li>WISHLIST</li>
-                    <li>SPECIAL</li>
-                    <li>CUSTOMER SERVICES</li>
-                    <li>SITE MAPS</li>
+                    {% for link in section.settings.menu.links %}
+                    <li>
+                        <a href="{{ link.url }}">{{
+                            link.title | escape
+                            }}</a>
+                    </li>
+                    {% endfor %}
                 </ul>
-            </div>
-            <div class="footer__top-column">
-                <h5>INFORMATION</h5>
+                {% endif %}
+                {% if block.settings.subtext != blank%}
                 <ul>
-                    <li>ABOUT US</li>
-                    <li>DELIVERY INFORMATION</li>
-                    <li>PRIVACY POLICY</li>
-                    <li>SUPPORT</li>
-                    <li>ORDER TRACKING</li>
+                    {% for subtext in block.settings.subtext %}
+                    <li><span>{{ subtext }}</span></li>
+                    {% endfor %}
                 </ul>
+                {% endif %}
             </div>
-            <div class="footer__top-column">
-                <h5>NEWS</h5>
-                <ul>
-                    <li>BLOG</li>
-                    <li>PRESS</li>
-                    <li>EXHIBITIONS</li>
-                </ul>
-            </div>
-            <div class="footer__top-column">
-                <h5>CONTACT INFORMATION</h5>
-                <ul>
-                    <li>291 SOUTH 21TH STREET,
-                        SUITE 721 NEW YORK NY 10016</li>
-                    <li>+ 1235 2355 98</li>
-                    <li>INFO@YOURSITE.COM</li>
-                    <li>YOURSITE.COM</li>
-                </ul>
-            </div>
+            {% endfor %}
         </div>
         <div class="footer__bottom">
-            <p class="footer__bottom--copy">Copyright ©2023 All rights reserved | This template is made with ♥ by
+            <p class="footer-copy">Copyright ©2023 All rights reserved | This template is made with ♥ by
                 Colorlib Demo Images: Unsplash ,
                 Pexels.com</p>
         </div>
@@ -59,12 +39,34 @@
 </footer>
 
 {% schema %}
-{
-"name": "footer",
-"presets": [
-{
-"name": "footer"
-}
-]
-}
+    {
+        "name": "footer",
+        "blocks": [
+            {
+                "type": "",
+                "settings": [
+                ]
+            },
+            {
+                "type": "",
+                "settings": [
+                ]
+            },
+            {
+                "type": "",
+                "settings": [
+                ]
+            },
+            {
+                "type": "",
+                "settings": [
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "footer"
+            }
+        ]
+    }
 {% endschema %}

@@ -184,25 +184,9 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "test_section": {
-      "type": "test-section",
-      "settings": {
-        "test-box": "Example title"
-      },
-      "blocks": {
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "Example subtitle"
-          }
-        }
-      },
-      "block_order": ["text"]
     }
   },
   "order": [
-    "test_section",
     "image_banner",
     "rich_text",
     "featured_collection",
