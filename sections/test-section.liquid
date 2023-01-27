@@ -3,12 +3,9 @@
         <h1> {{ section.settings.text-box }} </h1>
     </div>
     {% for block in section.blocks %}
-        {% case block.type %}
-            {% when 'text' %}
-                <div class="simpletext" {{ block.shopify_attributes }}>
-                    <h3> {{ section.settings.text }} </h3>
-                </div>
-        {% endcase %}
+    <div class="simpletext" {{ block.shopify_attributes }}>
+        <h3> {{ section.settings.text }} </h3>
+    </div>
     {% endfor %}
 </div>
    
