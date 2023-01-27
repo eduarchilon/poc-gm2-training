@@ -3,11 +3,19 @@
     {% case block.type %}
     {% when 'text' %}
     <div class="text" {{ block.shopify_attributes }}>
-        <h3>{{ block.settings.text-text }}</h3>
+        <h3 class="huy">{{ block.settings.text-text }}</h3>
     </div>
     {% endcase %}
     {% endfor %}
 </div>
+
+<style>
+    .huy{
+        background-color: red;
+        width: 200px;
+        color: white;
+    }
+</style>
 
 {% schema %}
 {
@@ -20,7 +28,8 @@
              {
                 "type":"text",
                 "id":"text-test",
-                "label":"text"
+                "label":"text",
+                "default": "Hola mundo"
              }
           ]
        }
