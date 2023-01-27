@@ -1,43 +1,52 @@
-<div id="shopify-section-textsection">
-    {% for block in section.blocks %}
+<h1 class="title"> {{section.settings.test-title}}</h1>
+<!-- <p class="text">{{section.settings}}</p> -->
+
+{% for block in section.blocks %}
     {% case block.type %}
-    {% when 'text' %}
-    <div>
-        <h3>{{ block.settings.text }}</h3>
-    </div>
+        {% when 'text' %}
+            <div class="text" {{ block.shopify_attributes }}>
+                {{block.settings.test-text}}
+            </div>
     {% endcase %}
-    {% endfor %}
-</div>
+{% endfor %}
+
 
 {% schema %}
-{
-    "name":"Slideshow",
-    "tag":"section",
-    "class":"slideshow",
-    "settings":[
-       {
-          "type":"text",
-          "id":"title",
-          "label":"Slideshow"
-       }
-    ],
-    "blocks":[
-       {
-          "name":"text-text",
-          "type":"text",
-          "settings":[
-             {
-                "type":"text",
-                "id":"text-test",
-                "label":"Image"
-             }
-          ]
-       }
-    ],
-    "presets":[
-       {
-          "name":"test-preset"
-       }
-    ]
- }
+    {
+        "name": "test-file",
+        "settings": [
+            {
+                "type": "text",
+                "id": "test-title",
+                "label": "test-title"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "test-text",
+                "type": "text",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "test-text",
+                        "default": "text from section",
+                        "label": "test-text"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "test-preset"
+            }
+        ]
+    }
 {% endschema %}
+
+{% stylesheet %}
+    .title, .text{
+        width: fit-content;
+        padding-left: 50px;
+        padding-bottom: 50px;
+    }
+{% endstylesheet %}
