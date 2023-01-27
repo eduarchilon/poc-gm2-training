@@ -3,9 +3,9 @@
         <h1> {{ section.settings.text-box }} </h1>
     </div>
     {% for block in section.blocks %}
-    <div class="simpletext" {{ block.shopify_attributes }}>
-        {% for subtext in block.settings.text %}
-        <li><span>{{ subtext }}</span></li>
+    <div class="simpletext">
+        {% for text in block.settings.text %}
+        <p><span>{{ text }}</span></p>
         {% endfor %}
     </div>
     {% endfor %}
