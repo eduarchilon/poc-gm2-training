@@ -1,42 +1,49 @@
-
-    {% for block in section.blocks %}
+{% for block in section.blocks %}
     {% case block.type %}
-    {% when 'text' %}
-    <div class="text" {{ block.shopify_attributes }}>
-        <h3>{{ block.settings.text-text }}</h3>
-    </div>
+        {% when 'text' %}
+            <div class="text" {{ block.shopify_attributes }}>
+                {{block.settings.test-text}}
+            </div>
     {% endcase %}
-    {% endfor %}
-    
+{% endfor %}
+
 
 {% schema %}
-{
-    "name":"Slideshow",
-    "tag":"section",
-    "settings":[
-       {
-          "type":"text",
-          "id":"title",
-          "label":"Slideshow"
-       }
-    ],
-    "blocks":[
-       {
-          "name":"text-text",
-          "type":"text",
-          "settings":[
-             {
-                "type":"text",
-                "id":"text-test",
-                "label":"Image"
-             }
-          ]
-       }
-    ],
-    "presets":[
-       {
-          "name":"test-preset"
-       }
-    ]
- }
+    {
+        "name": "test-file",
+        "settings": [
+            {
+                "type": "text",
+                "id": "test-title",
+                "label": "test-title"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "test-text",
+                "type": "text",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "test-text",
+                        "default": "text from section",
+                        "label": "test-text"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "test-preset"
+            }
+        ]
+    }
 {% endschema %}
+
+{% stylesheet %}
+    .title, .text{
+        width: fit-content;
+        padding-left: 50px;
+        padding-bottom: 50px;
+    }
+{% endstylesheet %}
