@@ -4,9 +4,7 @@
     </div>
     {% for block in section.blocks %}
     <div class="simpletext">
-        {% for text in block.settings.text %}
-        <p><span>{{ text }}</span></p>
-        {% endfor %}
+        <p><span>{{ block.settings.text }}</span></p>
     </div>
     {% endfor %}
 </div>
