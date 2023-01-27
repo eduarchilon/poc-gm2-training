@@ -1,43 +1,43 @@
 <div id="shopify-section-textsection">
-    <div class="simpletext">
-        <h1> {{ section.settings.text-box }} </h1>
-      {% for block in section.blocks %}
-    <div class="simpletext">
-        <p><span>{{ block.settings.text }}</span></p>
-    </div>
-    {% endfor %}
-    </div>
+  {% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'slide' %}
+      <div class="slide" {{ block.shopify_attributes }}>
+        {{ block.settings.image | image_url: width: 2048 | image_tag }}
+      </div>
+  {% endcase %}
+{% endfor %}
 </div>
-   
+
 {% schema %}
-    {
-        "name": "test-section",
-        "settings": [
-        {
-            "id": "text-box",
-            "type": "text",
-            "label": "Heading"
-        }
-        ],
-        "blocks": [
-            {
-                "name": "text",
-                "type": "text",
-                "settings": [
-                    {
-                        "type": "text",
-                        "id": "subtitle",
-                        "label": "subtitle",
-                        "default": "prueba"
-                    }
-                ]
-            }
-        ],
-        "presets": [
-        {
-            "name": "test-preset"
-        }
-        ]
-    }
+  {
+      "name": "Slideshow",
+"tag": "section",
+"class": "slideshow",
+"settings": [
+  {
+    "type": "text",
+    "id": "title",
+    "label": "Slideshow"
+  }
+],
+"blocks": [
+   {
+     "name": "Slide",
+     "type": "slide",
+     "settings": [
+       {
+         "type": "image_picker",
+         "id": "image",
+         "label": "Image"
+       }
+     ]
+   }
+ ],
+      "presets": [
+      {
+          "name": "test-preset"
+      }
+      ]
+  }
 {% endschema %}
-  
