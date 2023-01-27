@@ -1,12 +1,12 @@
 <div id="shopify-section-textsection">
     <div class="simpletext">
         <h1> {{ section.settings.text-box }} </h1>
-    </div>
-    {% for block in section.blocks %}
+      {% for block in section.blocks %}
     <div class="simpletext">
         <p><span>{{ block.settings.text }}</span></p>
     </div>
     {% endfor %}
+    </div>
 </div>
    
 {% schema %}
