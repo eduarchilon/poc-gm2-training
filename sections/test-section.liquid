@@ -1,42 +1,34 @@
-{% for block in section.blocks %}
+<div id="shopify-section-textsection">
+    {% for block in section.blocks %}
     {% case block.type %}
-        {% when 'text' %}
-            <div class="text" {{ block.shopify_attributes }}>
-                {{block.settings.test-text}}
-            </div>
+    {% when 'text' %}
+    <div class="text" {{ block.shopify_attributes }}>
+        <h3>{{ block.settings.text-text }}</h3>
+    </div>
     {% endcase %}
-{% endfor %}
-
+    {% endfor %}
+</div>
 
 {% schema %}
-    {
-        "name": "test-file",
-        "blocks": [
-            {
-                "name": "test-text",
-                "type": "text",
-                "settings": [
-                    {
-                        "type": "text",
-                        "id": "test-text",
-                        "default": "text from section",
-                        "label": "test-text"
-                    }
-                ]
-            }
-        ],
-        "presets": [
-            {
-                "name": "test-preset"
-            }
-        ]
-    }
+{
+    "name":"test-text",
+    "blocks":[
+       {
+          "name":"text-text",
+          "type":"text",
+          "settings":[
+             {
+                "type":"text",
+                "id":"text-test",
+                "label":"text"
+             }
+          ]
+       }
+    ],
+    "presets":[
+       {
+          "name":"test-preset"
+       }
+    ]
+ }
 {% endschema %}
-
-{% stylesheet %}
-    .title, .text{
-        width: fit-content;
-        padding-left: 50px;
-        padding-bottom: 50px;
-    }
-{% endstylesheet %}
