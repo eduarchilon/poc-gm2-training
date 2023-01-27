@@ -1,8 +1,3 @@
-
-
-<h1 class="title"> {{section.settings.test-title}}</h1>
-<!-- <p class="text">{{section.settings}}</p> -->
-
 {% for block in section.blocks %}
     {% case block.type %}
         {% when 'text' %}
@@ -16,13 +11,6 @@
 {% schema %}
     {
         "name": "test-file",
-        "settings": [
-            {
-                "type": "text",
-                "id": "test-title",
-                "label": "test-title"
-            }
-        ],
         "blocks": [
             {
                 "name": "test-text",
