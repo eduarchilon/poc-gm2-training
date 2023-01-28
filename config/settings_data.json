@@ -34,13 +34,45 @@
           "3ca9d1da-4e76-4dff-9e90-1ab7607f44a4": {
             "type": "text",
             "settings": {
-              "title": "Link heading",
-              "text": ""
+              "title": "ABOUT FOOTWEAR",
+              "text": "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life"
+            }
+          },
+          "49456d30-f423-48ac-a0c8-dfd7e04cf4df": {
+            "type": "text",
+            "settings": {
+              "title": "CUSTOMER CARE",
+              "text": "text column"
+            }
+          },
+          "969e44a4-2ea6-4031-8c77-878e3b48f485": {
+            "type": "text",
+            "settings": {
+              "title": "INFORMATION",
+              "text": "text column"
+            }
+          },
+          "c2b27afc-e968-4ba4-afe4-23e69fe436cc": {
+            "type": "text",
+            "settings": {
+              "title": "NEWS",
+              "text": "text column"
+            }
+          },
+          "aa6a8196-cf84-4c72-83e9-049d16cee301": {
+            "type": "text",
+            "settings": {
+              "title": "CONTACT INFORMATION",
+              "text": "text column"
             }
           }
         },
         "block_order": [
-          "3ca9d1da-4e76-4dff-9e90-1ab7607f44a4"
+          "3ca9d1da-4e76-4dff-9e90-1ab7607f44a4",
+          "49456d30-f423-48ac-a0c8-dfd7e04cf4df",
+          "969e44a4-2ea6-4031-8c77-878e3b48f485",
+          "c2b27afc-e968-4ba4-afe4-23e69fe436cc",
+          "aa6a8196-cf84-4c72-83e9-049d16cee301"
         ],
         "settings": {
           "copy-text": "Copyright ©2023 All rights reserved | This template is made with ♥  by Colorlib Demo Images: Unsplash , Pexels.com"
