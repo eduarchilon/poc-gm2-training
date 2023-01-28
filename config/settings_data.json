@@ -30,7 +30,20 @@
       },
       "footer": {
         "type": "footer",
+        "blocks": {
+          "3ca9d1da-4e76-4dff-9e90-1ab7607f44a4": {
+            "type": "text",
+            "settings": {
+              "title": "Link heading",
+              "text": ""
+            }
+          }
+        },
+        "block_order": [
+          "3ca9d1da-4e76-4dff-9e90-1ab7607f44a4"
+        ],
         "settings": {
+          "copy-text": "Copyright ©2023 All rights reserved | This template is made with ♥  by Colorlib Demo Images: Unsplash , Pexels.com"
         }
       }
     },
