@@ -1,43 +1,35 @@
 <div id="shopify-section-textsection">
-    {% for block in section.blocks %}
-    {% case block.type %}
-    {% when 'text' %}
-    <div class="slide" {{ block.shopify_attributes }}>
-        {{ block.settings.text }}
-    </div>
-    {% endcase %}
-    {% endfor %}
+   {% for block in section.blocks %}
+   {% case block.type %}
+   {% when 'text' %}
+   <div class="text" {{ block.shopify_attributes }}>
+       <p class="huy">{{ block.settings.text-text }}</p>
+   </div>
+   {% endcase %}
+   {% endfor %}
 </div>
 
 {% schema %}
 {
-    "name":"Slideshow",
-    "tag":"section",
-    "class":"slideshow",
-    "settings":[
-       {
-          "type":"text",
-          "id":"title",
-          "label":"Slideshow"
-       }
-    ],
-    "blocks":[
-       {
-          "name":"text-text",
-          "type":"text",
-          "settings":[
-             {
-                "type":"text",
-                "id":"text-test",
-                "label":"Image"
-             }
-          ]
-       }
-    ],
-    "presets":[
-       {
-          "name":"test-preset"
-       }
-    ]
- }
+   "name":"test-text",
+   "blocks":[
+      {
+         "name":"text-text",
+         "type":"text",
+         "settings":[
+            {
+               "type":"text",
+               "id":"text-text",
+               "label":"text",
+               "default": "Hola mundo"
+            }
+         ]
+      }
+   ],
+   "presets":[
+      {
+         "name":"test-preset"
+      }
+   ]
+}
 {% endschema %}

@@ -5,35 +5,15 @@
         <div class="footer__top">
             {% for block in section.blocks %}
             <div class="footer__top-column">
-                <h5>{{ section.settings.heading }}</h5>
+                <h5>{{ block.settings.heading }}</h5>
                 {% if block.settings.text != blank %}
                 <p>{{block.settings.text}}</p>
-                {% endif %}
-                {% if block.settings.menu != blank %}
-                <ul>
-                    {% for link in section.settings.menu.links %}
-                    <li>
-                        <a href="{{ link.url }}">{{
-                            link.title | escape
-                            }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-                {% if block.settings.subtext != blank%}
-                <ul>
-                    {% for subtext in block.settings.subtext %}
-                    <li><span>{{ subtext }}</span></li>
-                    {% endfor %}
-                </ul>
                 {% endif %}
             </div>
             {% endfor %}
         </div>
         <div class="footer__bottom">
-            <p class="footer-copy">Copyright ©2023 All rights reserved | This template is made with ♥ by
-                Colorlib Demo Images: Unsplash ,
-                Pexels.com</p>
+            <p class="footer-copy">{{ section.settings.copy-text }}</p>
         </div>
     </div>
 </footer>
@@ -41,25 +21,36 @@
 {% schema %}
     {
         "name": "footer",
+        "settings": [
+            {
+                "type": "text",
+                "id": "copy-text",
+                "label": "copyright text"
+            }
+        ],
         "blocks": [
             {
-                "type": "",
+                "type": "text",
+                "name": "Link heading",
                 "settings": [
+                    {
+                        "type": "text",
+                        "id": "heading",
+                        "label": "Link heading",
+                        "default": "Link heading"
+                    }
                 ]
             },
             {
-                "type": "",
+                "type": "text",
+                "name": "Optional text",
                 "settings": [
-                ]
-            },
-            {
-                "type": "",
-                "settings": [
-                ]
-            },
-            {
-                "type": "",
-                "settings": [
+                    {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Link heading",
+                    "default": "Link heading"
+                    }
                 ]
             }
         ],
