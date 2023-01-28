@@ -1,12 +1,52 @@
+{{ 'footer.css' | asset_url | stylesheet_tag }}
+
+<footer class="footer">
+    <div class="container footer-container">
+        <div class="footer__top">
+            {% for block in section.blocks %}
+            <div class="footer__top-column">
+                <h5>{{ block.settings.text-or-title }}</h5>
+                {% if block.settings.text-or-title != blank %}
+                <p>{{block.settings.text-or-title}}</p>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        <div class="footer__bottom">
+            <p class="footer-copy">{{ section.settings.copy-text }}</p>
+        </div>
+    </div>
+</footer>
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+    {
+        "name": "footer",
+        "settings": [
+            {
+                "type": "text",
+                "id": "copy-text",
+                "label": "copyright text"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "text",
+                "name": "text",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "text-or-title",
+                        "label": "Heading or text",
+                        "default": "Link heading"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "footer"
+            }
+        ]
+    }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
+}
