@@ -9,6 +9,15 @@
                 {% if block.settings.text != blank %}
                 <p>{{block.settings.text }}</p>
                 {% endif %}
+              <ul>
+                    {% for link in block.settings.menu.links %}
+                    <li>
+                        <a href="{{ link.url }}">{{
+                            link.title | escape
+                            }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
             {% endfor %}
         </div>
@@ -44,6 +53,11 @@
                         "id": "text",
                         "label": "Text",
                         "default": "text column"
+                    },
+                    {
+                        "type": "link_list",
+                        "id": "menu",
+                        "label": "menu"
                     }
                 ]
             }
