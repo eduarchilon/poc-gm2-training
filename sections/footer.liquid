@@ -9,17 +9,15 @@
                 {% if block.settings.text != blank %}
                 <p>{{block.settings.text }}</p>
                 {% endif %}
-                {% if block.settings.menu != blank %}
-                <ul>
+              <ul>
                     {% for link in block.settings.menu.links %}
                     <li>
-                        <a href="{{ link.url }}" class="full-unstyled-link">{{
+                        <a href="{{ link.url }}">{{
                             link.title | escape
                             }}</a>
                     </li>
                     {% endfor %}
                 </ul>
-                {% endif %}
             </div>
             {% endfor %}
         </div>
@@ -59,7 +57,7 @@
                     {
                         "type": "link_list",
                         "id": "menu",
-                        "label": "menu",
+                        "label": "menu"
                     }
                 ]
             }
