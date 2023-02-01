@@ -18,8 +18,8 @@
                     </li>
                     {% endfor %}
                 </ul>
-                {%- if section.settings.show_social == true -%}
-                <ul class="footer__list-social list-unstyled list-social jjjj" role="list">
+                {%- if section.settings.show_social ==true -%}
+                <ul class="footer__list-social list-unstyled list-social" role="list">
                     {%- if settings.social_twitter_link != blank -%}
                     <li class="list-social__item">
                         <a href="{{ settings.social_twitter_link }}" class="link list-social__link">
@@ -41,37 +41,11 @@
             </div>
             {% endfor %}
         </div>
-        {%- if section.settings.show_social == true -%}
-                <ul class="footer__list-social list-unstyled list-social jjjj" role="list">
-                    {%- if settings.social_twitter_link != blank -%}
-                    <li class="list-social__item">
-                        <a href="{{ settings.social_twitter_link }}" class="link list-social__link">
-                            {%- render 'icon-twitter' -%}
-                            <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
-                        </a>
-                    </li>
-                    {%- endif -%}
-                    {%- if settings.social_facebook_link != blank -%}
-                    <li class="list-social__item">
-                        <a href="{{ settings.social_facebook_link }}" class="link list-social__link">
-                            {%- render 'icon-facebook' -%}
-                            <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
-                        </a>
-                    </li>
-                    {%- endif -%}
-                </ul>
-                {%- endif -%}
         <div class="footer__bottom">
             <p class="footer-copy">{{ section.settings.copy-text }}</p>
         </div>
     </div>
 </footer>
-
-<style>
-    .jjjj{
-        background-color: red;
-    }
-</style>
 
 {% schema %}
     {
@@ -81,6 +55,12 @@
                 "type": "text",
                 "id": "copy-text",
                 "label": "copyright text"
+            },
+            {
+                "type": "checkbox",
+                 "id": "show_social",
+                "default": false,
+                 "label": "Show"
             }
         ],
         "blocks": [
