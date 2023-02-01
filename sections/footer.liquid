@@ -18,7 +18,6 @@
                     </li>
                     {% endfor %}
                 </ul>
-                {%- if section.settings.show_social -%}
                 <ul class="footer__list-social list-unstyled list-social" role="list">
                     {%- if settings.social_twitter_link != blank -%}
                     <li class="list-social__item">
@@ -37,7 +36,6 @@
                     </li>
                     {%- endif -%}
                 </ul>
-                {%- endif -%}
             </div>
             {% endfor %}
         </div>
@@ -55,12 +53,6 @@
                 "type": "text",
                 "id": "copy-text",
                 "label": "copyright text"
-            },
-            {
-                "type": "checkbox",
-                 "id": "show_social",
-                "default": false,
-                 "label": "Show"
             }
         ],
         "blocks": [
@@ -84,12 +76,6 @@
                         "type": "link_list",
                         "id": "menu",
                         "label": "menu"
-                    },
-                    {
-                        "type": "checkbox",
-                         "id": "show_social",
-                        "default": false,
-                         "label": "Show"
                     }
                 ]
             }
