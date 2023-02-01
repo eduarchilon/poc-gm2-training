@@ -51,8 +51,8 @@
             "type": "text",
             "settings": {
               "title": "INFORMATION",
-              "text": "text column",
-              "menu": ""
+              "text": "",
+              "menu": "information"
             }
           },
           "c2b27afc-e968-4ba4-afe4-23e69fe436cc": {
