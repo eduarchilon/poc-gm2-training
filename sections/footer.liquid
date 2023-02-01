@@ -18,7 +18,7 @@
                     </li>
                     {% endfor %}
                 </ul>
-                {%- if section.settings.show_social ==true -%}
+                {%- if block.settings.show_social ==true -%}
                 <ul class="footer__list-social list-unstyled list-social kkkkk" role="list">
                     {%- if settings.social_twitter_link != blank -%}
                     <li class="list-social__item">
@@ -61,12 +61,6 @@
                 "type": "text",
                 "id": "copy-text",
                 "label": "copyright text"
-            },
-            {
-                "type": "checkbox",
-                 "id": "show_social",
-                "default": false,
-                 "label": "Show"
             }
         ],
         "blocks": [
