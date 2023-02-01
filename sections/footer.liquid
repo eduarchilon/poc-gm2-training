@@ -21,6 +21,9 @@
             </div>
             {% endfor %}
         </div>
+        <div class="footer__bottom">
+            <p class="footer-copy">{{ section.settings.copy-text }}</p>
+        </div>
       <ul class="footer__list-social list-unstyled list-social" role="list">
             {%- if settings.social_twitter_link != blank -%}
               <li class="list-social__item">
@@ -95,9 +98,6 @@
               </li>
             {%- endif -%}
           </ul>
-        <div class="footer__bottom">
-            <p class="footer-copy">{{ section.settings.copy-text }}</p>
-        </div>
     </div>
 </footer>
 
