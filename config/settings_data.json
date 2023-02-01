@@ -59,8 +59,8 @@
             "type": "text",
             "settings": {
               "title": "NEWS",
-              "text": "text column",
-              "menu": ""
+              "text": "",
+              "menu": "news"
             }
           },
           "aa6a8196-cf84-4c72-83e9-049d16cee301": {
