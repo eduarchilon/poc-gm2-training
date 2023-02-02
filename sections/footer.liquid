@@ -9,7 +9,7 @@
                 {% if block.settings.text != blank %}
                 <p>{{block.settings.text }}</p>
                 {% endif %}
-              <ul>
+                <ul>
                     {% for link in block.settings.menu.links %}
                     <li>
                         <a href="{{ link.url }}">{{
@@ -18,6 +18,38 @@
                     </li>
                     {% endfor %}
                 </ul>
+                {%- if block.settings.show_social ==true -%}
+                <ul class="kkkkk footer__social-media">
+                    {%- if settings.social_twitter_link != blank -%}
+                    <li class="social-media-icon">
+                        <a href="{{ settings.social_twitter_link }}">
+                            {%- render 'icon-twitter' -%}
+                        </a>
+                    </li>
+                    {%- endif -%}
+                    {%- if settings.social_facebook_link != blank -%}
+                    <li class="social-media-icon">
+                        <a href="{{ settings.social_facebook_link }}">
+                            {%- render 'icon-facebook' -%}
+                        </a>
+                    </li>
+                    {%- endif -%}
+                    {%- if settings.social_instagram_link != blank -%}
+                    <li class="social-media-icon">
+                        <a href="{{ settings.social_instagram_link }}">
+                            {%- render 'icon-instagram' -%}
+                        </a>
+                    </li class="social-media-icon">
+                    {%- endif -%}
+                    {%- if settings.social_youtube_link != blank -%}
+                    <li class="social-media-icon">
+                        <a href="{{ settings.social_youtube_link }}">
+                        {%- render 'icon-youtube' -%}
+                        </a>
+                    </li>
+                    {%- endif -%}
+                </ul>
+                {%- endif -%}
             </div>
             {% endfor %}
         </div>
@@ -26,6 +58,21 @@
         </div>
     </div>
 </footer>
+
+<style>
+    .footer__social-media{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .social-media-icon a svg{
+        width: 25px;
+        height: 25px;
+        margin: auto;
+        display: block;
+    }
+</style>
 
 {% schema %}
     {
@@ -58,6 +105,12 @@
                         "type": "link_list",
                         "id": "menu",
                         "label": "menu"
+                    },
+                    {
+                        "type": "checkbox",
+                         "id": "show_social",
+                        "default": false,
+                         "label": "Show"
                     }
                 ]
             }
