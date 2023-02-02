@@ -49,8 +49,8 @@
             "type": "text",
             "settings": {
               "title": "CUSTOMER CARE",
-              "text": "text column",
-              "menu": "",
+              "text": "",
+              "menu": "customer-care",
               "show_social": false
             }
           },
@@ -58,8 +58,8 @@
             "type": "text",
             "settings": {
               "title": "INFORMATION",
-              "text": "text column",
-              "menu": "",
+              "text": "",
+              "menu": "information",
               "show_social": false
             }
           },
@@ -67,8 +67,8 @@
             "type": "text",
             "settings": {
               "title": "NEWS",
-              "text": "text column",
-              "menu": "",
+              "text": "",
+              "menu": "news",
               "show_social": false
             }
           },
@@ -77,7 +77,7 @@
             "settings": {
               "title": "CONTACT INFORMATION",
               "text": "291 SOUTH 21TH STREET, SUITE 721 NEW YORK NY 10016",
-              "menu": "",
+              "menu": "contact-information-2",
               "show_social": false
             }
           }
