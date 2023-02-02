@@ -19,36 +19,32 @@
                     {% endfor %}
                 </ul>
                 {%- if block.settings.show_social ==true -%}
-                <ul class="kkkkk" role="list">
+                <ul class="kkkkk footer__social-media">
                     {%- if settings.social_twitter_link != blank -%}
-                    <li>
+                    <li class="social-media-icon">
                         <a href="{{ settings.social_twitter_link }}">
                             {%- render 'icon-twitter' -%}
-                            <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
                         </a>
                     </li>
                     {%- endif -%}
                     {%- if settings.social_facebook_link != blank -%}
-                    <li>
+                    <li class="social-media-icon">
                         <a href="{{ settings.social_facebook_link }}">
                             {%- render 'icon-facebook' -%}
-                            <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
                         </a>
                     </li>
                     {%- endif -%}
                     {%- if settings.social_instagram_link != blank -%}
-                    <li>
+                    <li class="social-media-icon">
                         <a href="{{ settings.social_instagram_link }}">
                             {%- render 'icon-instagram' -%}
-                            <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
                         </a>
-                    </li>
+                    </li class="social-media-icon">
                     {%- endif -%}
-                    {%- if settings.social_tiktok_link != blank -%}
-                    <li>
-                        <a href="{{ settings.social_tiktok_link }}">
-                            {%- render 'icon-tiktok' -%}
-                            <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
+                    {%- if settings.social_youtube_link != blank -%}
+                    <li class="social-media-icon">
+                        <a href="{{ settings.social_youtube_link }}">
+                        {%- render 'icon-tumblr' -%}
                         </a>
                     </li>
                     {%- endif -%}
@@ -64,9 +60,17 @@
 </footer>
 
 <style>
-    .kkkkk{
-        background-color: red;
-        color: black;
+    .footer__social-media{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .social-media-icon a svg{
+        width: 25px;
+        height: 25px;
+        margin: auto;
+        display: block;
     }
 </style>
 
