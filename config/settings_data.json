@@ -2,6 +2,8 @@
   "current": {
     "type_header_font": "montserrat_n4",
     "type_body_font": "rockwell_n4",
+    "social_twitter_link": "https:\/\/twitter.com\/shopify",
+    "social_facebook_link": "https:\/\/facebook.com\/shopify",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -36,31 +38,35 @@
             "settings": {
               "title": "ABOUT FOOTWEAR",
               "text": "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life",
-              "menu": ""
+              "menu": "",
+              "show_social": true
             }
           },
           "49456d30-f423-48ac-a0c8-dfd7e04cf4df": {
             "type": "text",
             "settings": {
               "title": "CUSTOMER CARE",
-              "text": "",
-              "menu": "customer-care"
+              "text": "text column",
+              "menu": "",
+              "show_social": false
             }
           },
           "969e44a4-2ea6-4031-8c77-878e3b48f485": {
             "type": "text",
             "settings": {
               "title": "INFORMATION",
-              "text": "",
-              "menu": "information"
+              "text": "text column",
+              "menu": "",
+              "show_social": false
             }
           },
           "c2b27afc-e968-4ba4-afe4-23e69fe436cc": {
             "type": "text",
             "settings": {
               "title": "NEWS",
-              "text": "",
-              "menu": "news"
+              "text": "text column",
+              "menu": "",
+              "show_social": false
             }
           },
           "aa6a8196-cf84-4c72-83e9-049d16cee301": {
@@ -68,7 +74,8 @@
             "settings": {
               "title": "CONTACT INFORMATION",
               "text": "291 SOUTH 21TH STREET, SUITE 721 NEW YORK NY 10016",
-              "menu": "contact-information-2"
+              "menu": "",
+              "show_social": false
             }
           }
         },
