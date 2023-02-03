@@ -1,0 +1,41 @@
+<div id="shopify-section-promo">
+    <div class="promo__container">
+      <h3>{{ section.settings.text-promo }}</h3>
+    </div>  
+</div>
+
+{% schema %}
+{
+   "name":"test-text",
+   "settings":[
+      {
+         "type":"text",
+         "id":"text-promo",
+         "label":"text",
+         "default": "25% off (Almost) Everything! Use Code: Summer Sale"
+      }
+   ],
+   "presets":[
+      {
+         "name":"test-preset"
+      }
+   ]
+}
+{% endschema %}
+
+<style>
+   .promo__container{
+      background-color: #88c8bc;
+      padding: 0 50px;
+   }
+
+   .promo__container h3{
+      text-transform: uppercase;
+      color: #ffff;
+      text-align: center;
+      padding: 14px 0;
+      font-size: 20px;
+      font-weight: 100;
+   }
+</style>
+
