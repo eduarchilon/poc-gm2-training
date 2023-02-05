@@ -7,8 +7,6 @@
               src="{{ block.settings.image | image_url }}"
               alt="{{ block.settings.image.alt | escape }}"
             >
-          {%- else -%}
-            {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
           {%- endif -%}
         </div>
         {% endfor %}
@@ -32,7 +30,7 @@
                 {
                     "type": "image_picker",
                     "id": "image",
-                    "label": "t:sections.slideshow.blocks.slide.settings.image.label"
+                    "label": "select image"
                 }
             ]
         }
