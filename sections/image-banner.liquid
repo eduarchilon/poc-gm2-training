@@ -6,19 +6,11 @@
             <img
               src="{{ block.settings.image | image_url }}"
               alt="{{ block.settings.image.alt | escape }}"
+              class="slider__img"
             >
           {%- endif -%}
         </div>
         {% endfor %}
-        {%- comment -%} <div class="slider__section">
-            <img src="https://preview.colorlib.com/theme/footwear/images/img_bg_1.jpg.webp" alt="" class="slider__img">
-        </div>
-        <div class="slider__section">
-            <img src="https://preview.colorlib.com/theme/footwear/images/img_bg_2.jpg.webp" alt="" class="slider__img">
-        </div>
-        <div class="slider__section">
-            <img src="https://preview.colorlib.com/theme/footwear/images/img_bg_3.jpg.webp" alt="" class="slider__img">
-        </div> {%- endcomment -%}
     </div>
     <div class="slider__btn slider__btn--right" id="btn-right">
         <span>{% render 'arrow-icon' %}</span>
