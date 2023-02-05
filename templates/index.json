@@ -1,7 +1,38 @@
 {
   "sections": {
+    "promo": {
+      "type": "promo",
+      "settings": {
+        "text-promo": "25% off (Almost) Everything! Use Code: Summer Sale"
+      }
+    },
     "image_banner": {
       "type": "image-banner",
+      "blocks": {
+        "6dd012e9-efcb-4128-92b8-5d42bfb177ea": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img_bg_1_jpg.webp"
+          }
+        },
+        "d349b817-a5bd-43f3-bce2-7fe9914ba0d3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img_bg_2_jpg.webp"
+          }
+        },
+        "9c35dee2-c53d-4ab7-a783-71fd614224d6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img_bg_3_jpg.webp"
+          }
+        }
+      },
+      "block_order": [
+        "6dd012e9-efcb-4128-92b8-5d42bfb177ea",
+        "d349b817-a5bd-43f3-bce2-7fe9914ba0d3",
+        "9c35dee2-c53d-4ab7-a783-71fd614224d6"
+      ],
       "settings": {
       }
     },
@@ -165,11 +196,6 @@
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "promo": {
-      "type": "promo",
-      "settings": {
       }
     }
   },
