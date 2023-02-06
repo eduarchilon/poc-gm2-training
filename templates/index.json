@@ -33,10 +33,10 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/img_bg_3_jpg.webp",
-            "head-1": "",
-            "head-2": "",
-            "head-3": "",
-            "text": ""
+            "head-1": "NEW",
+            "head-2": "ARRIVAL",
+            "head-3": "UP TO 30% OFF",
+            "text": "New stylish shoes for men"
           }
         }
       },
