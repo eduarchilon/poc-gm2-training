@@ -1,0 +1,98 @@
+<div class="partners-section">
+    <div class="container">
+        <div class="partners-section__title">
+            <h2 class="partners__title">{{ section.settings.title }}</h2>
+        </div>
+        <div class="partners-content">
+            {% for block in section.blocks %}
+            {%- if block.settings.image -%}
+            <div><img class="partner-image" src="{{ block.settings.image | image_url }}"
+                    alt="{{ block.settings.image.alt | escape }}"></div>
+            {%- endif -%}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name":"image-banner",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "title"
+        }
+    ],
+    "blocks":[
+       {
+          "name":"image",
+          "type":"image",
+          "settings":[
+             {
+                "type":"image_picker",
+                "id":"image",
+                "label":"select image"
+             }
+          ]
+       }
+    ],
+    "presets":[
+       {
+          "name":"image-banner"
+       }
+    ]
+ }
+{% endschema %}
+
+<style>
+    .partners-section {
+        margin: 100px 0;
+    }
+
+    .partners-section__title {
+        margin-bottom: 90px;
+    }
+
+    .partners__title {
+        text-align: center;
+        color: rgba(0, 0, 0, 0.3);
+        font-family: var(--font-body-family);
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+    }
+
+    .partners-content {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .partner-image {
+        height: auto;
+        width: 200px;
+    }
+
+    /*Tablet*/
+    @media screen and (max-width: 990px) {
+        .partner-image {
+            width: 150px;
+        }
+
+        .partners-content {
+            justify-content: center;
+            width: auto;
+        }
+    }
+
+    /*Mobile*/
+    @media screen and (max-width: 720px) {
+        .partner-image {
+            width: 170px;
+        }
+    }
+</style>
