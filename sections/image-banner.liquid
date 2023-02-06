@@ -3,19 +3,17 @@
         {% for block in section.blocks %}
         <div class="slider__section">
             {%- if block.settings.image -%}
-            <img
-              src="{{ block.settings.image | image_url }}"
-              alt="{{ block.settings.image.alt | escape }}"
-              class="slider__img"
-            >
+            <img src="{{ block.settings.image | image_url }}" alt="{{ block.settings.image.alt | escape }}"
+                class="slider__img">
             <div class="slider__section-content">
                 <h2 class="slider-head-1">HUGE</h2>
                 <h2 class="slider-head-2">Sale</h2>
                 <h2 class="slider-head-3">COLLECTION</h2>
                 <p class="slider-text">New stylish shoes for men</p>
-                <a href="youtube.com" class="slider-link">Shop collection</a>
+                <a href="{{ section.settings.link_collection }}" class="slider-link">{{ section.settings.link_collection_label |
+                    escape }}</a>
             </div>
-          {%- endif -%}
+            {%- endif -%}
         </div>
         {% endfor %}
     </div>
@@ -29,26 +27,38 @@
 
 {% schema %}
 {
-    "name": "image-banner",
-    "blocks": [
+    "name":"image-banner",
+    "settings": [
         {
-            "name": "Slide",
-            "type": "image",
-            "settings": [
-                {
-                    "type": "image_picker",
-                    "id": "image",
-                    "label": "select image"
-                }
-            ]
+            "type": "url",
+            "id": "link_collection",
+            "label": "Link"
+        },
+        {
+            "type": "text",
+            "id": "link_collection_label",
+            "label": "Label text"
         }
     ],
-    "presets": [
-        {
-            "name": "image-banner"
-        }
+    "blocks":[
+       {
+          "name":"image",
+          "type":"image",
+          "settings":[
+             {
+                "type":"image_picker",
+                "id":"image",
+                "label":"select image"
+             }
+          ]
+       }
+    ],
+    "presets":[
+       {
+          "name":"image-banner"
+       }
     ]
-}
+ }
 {% endschema %}
 
 <style>
