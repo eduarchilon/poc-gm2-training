@@ -211,6 +211,51 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "partners": {
+      "type": "partners",
+      "blocks": {
+        "4f4fd924-cf66-40a9-b401-d7e885cdefbc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brand-1_jpg.webp"
+          }
+        },
+        "3caa0dfc-0dd8-45b2-84d5-80b1ea7ed27c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brand-2_jpg.webp"
+          }
+        },
+        "19c7cc4f-96d3-480a-b0e3-66c828fb0fda": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brand-3_jpg.webp"
+          }
+        },
+        "01bfb54b-f7b6-4b11-ba5e-0abc2832fcf4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brand-4_jpg.webp"
+          }
+        },
+        "15ab8519-c080-4754-83ea-b7aafda76995": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brand-5_jpg.webp"
+          }
+        }
+      },
+      "block_order": [
+        "4f4fd924-cf66-40a9-b401-d7e885cdefbc",
+        "3caa0dfc-0dd8-45b2-84d5-80b1ea7ed27c",
+        "19c7cc4f-96d3-480a-b0e3-66c828fb0fda",
+        "01bfb54b-f7b6-4b11-ba5e-0abc2832fcf4",
+        "15ab8519-c080-4754-83ea-b7aafda76995"
+      ],
+      "settings": {
+        "title": "TRUSTED PARTNERS"
+      }
     }
   },
   "order": [
@@ -220,6 +265,7 @@
     "featured_collection",
     "collage",
     "video",
-    "multicolumn"
+    "multicolumn",
+    "partners"
   ]
 }
