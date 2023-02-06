@@ -12,19 +12,31 @@
         "6dd012e9-efcb-4128-92b8-5d42bfb177ea": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/img_bg_1_jpg.webp"
+            "image": "shopify:\/\/shop_images\/img_bg_1_jpg.webp",
+            "head-1": "MEN'S",
+            "head-2": "SHOES",
+            "head-3": "COLLECTION",
+            "text": "New trending shoes"
           }
         },
         "d349b817-a5bd-43f3-bce2-7fe9914ba0d3": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/img_bg_2_jpg.webp"
+            "image": "shopify:\/\/shop_images\/img_bg_2_jpg.webp",
+            "head-1": "",
+            "head-2": "",
+            "head-3": "",
+            "text": ""
           }
         },
         "9c35dee2-c53d-4ab7-a783-71fd614224d6": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/img_bg_3_jpg.webp"
+            "image": "shopify:\/\/shop_images\/img_bg_3_jpg.webp",
+            "head-1": "",
+            "head-2": "",
+            "head-3": "",
+            "text": ""
           }
         }
       },
