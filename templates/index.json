@@ -34,6 +34,8 @@
         "9c35dee2-c53d-4ab7-a783-71fd614224d6"
       ],
       "settings": {
+        "link_collection": "shopify:\/\/collections",
+        "link_collection_label": "Shop collection"
       }
     },
     "rich_text": {
