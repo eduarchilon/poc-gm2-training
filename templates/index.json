@@ -1,51 +1,53 @@
 {
   "sections": {
+    "promo": {
+      "type": "promo",
+      "settings": {
+        "text-promo": "25% off (Almost) Everything! Use Code: Summer Sale"
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "6dd012e9-efcb-4128-92b8-5d42bfb177ea": {
+          "type": "image",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
+            "image": "shopify:\/\/shop_images\/img_bg_1_jpg.webp",
+            "head-1": "MEN'S",
+            "head-2": "SHOES",
+            "head-3": "COLLECTION",
+            "text": "New trending shoes"
           }
         },
-        "text": {
-          "type": "text",
+        "d349b817-a5bd-43f3-bce2-7fe9914ba0d3": {
+          "type": "image",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
+            "image": "shopify:\/\/shop_images\/img_bg_2_jpg.webp",
+            "head-1": "HUGE",
+            "head-2": "SALE",
+            "head-3": "50% OFF",
+            "text": "Big sale sandals"
           }
         },
-        "button": {
-          "type": "buttons",
+        "9c35dee2-c53d-4ab7-a783-71fd614224d6": {
+          "type": "image",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "image": "shopify:\/\/shop_images\/img_bg_3_jpg.webp",
+            "head-1": "NEW",
+            "head-2": "ARRIVAL",
+            "head-3": "UP TO 30% OFF",
+            "text": "New stylish shoes for men"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "6dd012e9-efcb-4128-92b8-5d42bfb177ea",
+        "d349b817-a5bd-43f3-bce2-7fe9914ba0d3",
+        "9c35dee2-c53d-4ab7-a783-71fd614224d6"
       ],
       "settings": {
-        "image": "{{ shop.brand.cover_image }}",
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "adapt_height_first_image": false,
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "link_collection": "shopify:\/\/collections",
+        "link_collection_label": "Shop collection"
       }
     },
     "rich_text": {
@@ -208,12 +210,6 @@
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "promo": {
-      "type": "promo",
-      "settings": {
-        "test-promo": "text"
       }
     }
   },
