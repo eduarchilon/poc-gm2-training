@@ -127,12 +127,19 @@
       "settings":{
         
       }
+    },
+    "best-products": {
+      "type":"best-products",
+      "settings":{
+        
+      }
     }
   },
   "order": [
     "promo",
     "image_banner",
     "introduction",
+    "best-products",
     "featured_collection",
     "partners"
   ]
