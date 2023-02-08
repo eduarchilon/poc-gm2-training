@@ -1,0 +1,39 @@
+<div class="introduction-section">
+    <div class="container introduction__content">
+        {% if section.settings.introduction-text != blank %}
+        <h2 class="introduction-text">{{section.settings.introduction-text}}</h2>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+    .introduction__content{
+    padding: 70px 0;
+    }
+
+    .introduction-text{
+        font-weight: 700;
+        font-size: 40px;
+        text-align: center;
+        font-family: var(--font-heading-family);
+    }
+</style>
+ 
+{% schema %}
+{
+   "name":"introduction",
+   "settings":[
+      {
+         "type":"text",
+         "id":"introduction-text",
+         "label": "write text",
+         "default": "It started with a simple idea: Create quality, well-designed products that I wanted myself."
+      }
+   ],
+   "presets":[
+      {
+         "name":"introduction"
+      }
+   ]
+}
+{% endschema %}
