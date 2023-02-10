@@ -3,7 +3,7 @@
         {% for block in section.blocks %}
         <div class="recomended__item">
             <a href="{{ block.settings.link_collection }}">
-                <img {{ block.settings.image_collection | image_url }}" alt="{{ block.settings.image_collection.alt | escape }}" >
+                <img src="{{ block.settings.collection.image | image_url }}" alt="{{ block.settings.collection.image.alt | escape }}" >
             </a>
             <h2><a href="{{ block.settings.link_collection }}">{{ block.settings.label__link_collection }}</a></h2>
         </div>
@@ -31,9 +31,9 @@
                     "label": "Link collection"
                 },
                 {
-                    "type":"image_picker",
-                    "id":"image_collection",
-                    "label":"Select image"
+                    "type":"collection",
+                    "id":"collection",
+                    "label":"Select collection"
                 }
             ]
         }
