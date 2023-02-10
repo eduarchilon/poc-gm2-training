@@ -5,7 +5,7 @@
             <a href="{{ block.settings.link_collection }}">
                 <img {{ block.settings.image_collection | image_url }}" alt="{{ block.settings.image_collection.alt | escape }}" >
             </a>
-            <h2><a href="{{ block.settings.link_collection }}">Shop Men's Collection</a></h2>
+            <h2><a href="{{ block.settings.link_collection }}">{{ block.settings.label__link_collection }}</a></h2>
         </div>
         {% endfor %}
     </div>
@@ -27,7 +27,7 @@
                 },
                 {
                     "type": "text",
-                    "id": "label__link--collection",
+                    "id": "label__link_collection",
                     "label": "Link collection"
                 },
                 {
