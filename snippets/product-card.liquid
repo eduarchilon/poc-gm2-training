@@ -1,6 +1,7 @@
 <div class="product-item">
-    <a href="/"><img class="product-item__img" src="https://preview.colorlib.com/theme/footwear/images/item-3.jpg.webp"
-            alt=""></a>
+    <a href="{{ product.url }}">
+        <img class="product-item__img" src="{{ product.featured_media | image_url }}" alt="{{ product.featured_media.alt | escape }}">
+    </a>
     <div class="product-item__content">
         <h2><a href="{{ product.url }}">{{ product.title }}</a></h2>
         <span class="product-item__price">{{ product.price }}</span>
