@@ -63,14 +63,16 @@
           "type": "image",
           "settings": {
             "link_collection": "shopify:\/\/collections\/men",
-            "label__link_collection": "Shop Men's Collection"
+            "label__link_collection": "Shop Men's Collection",
+            "collection": "men"
           }
         },
         "e87be4f8-01fe-4840-a6d9-a1bd4114e449": {
           "type": "image",
           "settings": {
             "link_collection": "shopify:\/\/collections\/women",
-            "label__link_collection": "Shop Women's Collection"
+            "label__link_collection": "Shop Women's Collection",
+            "collection": "women"
           }
         }
       },
