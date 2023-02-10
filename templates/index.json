@@ -108,12 +108,18 @@
       "settings": {
         "title": "TRUSTED PARTNERS"
       }
+    },
+    "recomended-collection": {
+      "type": "recomended-collection",
+      "settings": {
+      }
     }
   },
   "order": [
     "promo",
     "image_banner",
     "introduction",
+    "recomended-collection",
     "best-products",
     "partners"
   ]
