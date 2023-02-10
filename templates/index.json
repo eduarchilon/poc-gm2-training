@@ -56,11 +56,37 @@
         "introduction-text": "It started with a simple idea: Create quality, well-designed products that I wanted myself."
       }
     },
+    "recomended-collection": {
+      "type": "recomended-collection",
+      "blocks": {
+        "e8dc5eee-9a65-4e18-82f3-ce050de4dbf4": {
+          "type": "image",
+          "settings": {
+            "link_collection": "shopify:\/\/collections\/men",
+            "label__link_collection": "Shop Men's Collection"
+          }
+        },
+        "e87be4f8-01fe-4840-a6d9-a1bd4114e449": {
+          "type": "image",
+          "settings": {
+            "link_collection": "shopify:\/\/collections\/women",
+            "label__link_collection": "Shop Women's Collection"
+          }
+        }
+      },
+      "block_order": [
+        "e8dc5eee-9a65-4e18-82f3-ce050de4dbf4",
+        "e87be4f8-01fe-4840-a6d9-a1bd4114e449"
+      ],
+      "settings": {
+      }
+    },
     "best-products": {
       "type": "best-products",
       "settings": {
         "link_collection": "shopify:\/\/collections",
         "link_collection_label": "Shop all products",
+        "section-title": "BEST SELLERS",
         "collection": "best-sellers"
       }
     },
@@ -107,11 +133,6 @@
       ],
       "settings": {
         "title": "TRUSTED PARTNERS"
-      }
-    },
-    "recomended-collection": {
-      "type": "recomended-collection",
-      "settings": {
       }
     }
   },
