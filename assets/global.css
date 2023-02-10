@@ -1,5 +1,5 @@
 /*Desktop*/
-*{
+* {
     line-height: normal;
     margin: 0;
 }
@@ -16,6 +16,22 @@ ul {
 
 a {
     text-decoration: none;
+}
+
+.shop-link {
+    font-weight: 100;
+    font-family: var(--font-heading-family);
+    letter-spacing: 2px;
+    padding: 20px 30px;
+    background-color: #616161;
+    border-radius: 40px;
+    color: #fff;
+    display: block;
+    width: fit-content;
+}
+
+.shop-link:hover {
+    background-color: #000;
 }
 
 /*Tablet*/
