@@ -5,7 +5,7 @@
         <div class="footer__top">
             {% for block in section.blocks %}
             <div class="footer__top-column">
-                <h5>{{ block.settings.title }}</h5>
+                <h5 class="footer-column__heading">{{ block.settings.title }}</h5>
                 {% if block.settings.text != blank %}
                 <p>{{block.settings.text }}</p>
                 {% endif %}
@@ -71,6 +71,96 @@
         height: 25px;
         margin: auto;
         display: block;
+    }
+    /*Desktop*/
+    footer {
+        padding-top: 90px;
+    }
+
+    .footer h5{
+        font-size: var(--heading-column);
+    }
+
+    .footer ul {
+        font-size: var(--heading-item);
+    }
+
+    .footer p {
+        font-size: var(--heading-item);
+    }
+
+    .footer__top-column>p,
+    .footer h5 {
+    line-height: 25px;
+    }
+
+    .footer li,
+    .footer a,
+    .footer p,
+    .footer span {
+    color: #595959;
+    font-weight: 300;
+    font-family: var(--font-heading-family);
+    }
+
+    .footer__top {
+    display: flex;
+    gap: 40px;
+    padding-bottom: 56px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    }
+
+    .footer__top .footer__top-column {
+    width: 180px;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    }
+
+    .footer h5 {
+    font-family: var(--font-body-family);
+    font-weight: 400;
+    margin-bottom: 35px;
+    letter-spacing: 2px;
+    }
+
+    footer li {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    }
+
+    .footer ul {
+    word-break: break-all;
+    padding: 0;
+    }
+
+    .footer-copy {
+    text-align: center;
+    padding: 10px 0;
+    }
+
+    .footer__bottom {
+    padding: 1.65rem 0;
+    }
+
+    /*Tablet*/
+    @media screen and (max-width: 990px) {
+    .footer__top .footer__top-column:last-child {
+        flex-basis: 100%;
+    }
+    }
+
+    /*Mobile*/
+    @media screen and (max-width: 720px) {
+    .footer__top {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer__top .footer__top-column {
+        width: 100%;
+    }
     }
 </style>
 
