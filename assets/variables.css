@@ -1,11 +1,11 @@
 :root{
-    /*Green*/
     --white: #fff;
     /*Green*/
     --primary-green: #88c8bc;
     /*Black*/
     --primary-black: #000;
     --secondary-black: #595959;
+    --backdrop-black: #00000083;
      /*Grey*/
      --primary-grey: #616161;
 }

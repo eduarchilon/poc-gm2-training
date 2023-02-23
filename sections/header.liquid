@@ -90,20 +90,16 @@
     .header__logo{
         font-family: var(--font-heading-family);
     }
+
     .header-container {
         display: flex;
         flex-direction: column;
-        padding-top: 50px;
-        padding-bottom: 10px;
-    }
-
-    .header__logo,
-    .header__menu {
-        margin: 0;
+        padding-top: 60px;
+        padding-bottom: 15px;
     }
 
     .header__top{
-        margin-bottom: 45px;
+        margin-bottom: 35px;
     }
 
     .header__top,
@@ -122,8 +118,8 @@
 
     .header__menu li a,
     .header__cart a {
-        font-size: 12px;
-        letter-spacing: 3px;
+        font-size: 15px;
+        letter-spacing: 2px;
         text-transform: uppercase;
     }
 
@@ -135,7 +131,7 @@
 
     .header__logo {
         font-weight: 700;
-        color: rgb(89, 89, 89);
+        color: var(--primary-grey);
         font-size: 34px;
     }
 
@@ -156,8 +152,10 @@
     }
 
     .search__input::placeholder {
-        color: #88c8bc;
-        font-weight: lighter;
+        color: var(--primary-green);
+        font-weight: 200;
+        color: var(--primary-grey);
+        font-family: var(--font-heading-family);
     }
 
     .search__input:focus {
@@ -167,12 +165,12 @@
     }
 
     .search__button {
-        color: #ffff;
+        color: var(--white);
         cursor: pointer;
         height: 40px;
         width: 40px;
-        background: #88c8bc;
-        border: 1px solid #88c8bc;
+        background: var(--primary-green);
+        border: 1px solid var(--primary-green);
         border-radius: 40px;
         position: absolute;
         right: 0px;
@@ -187,7 +185,7 @@
     @media screen and (max-width: 990px) {
 
         .header-container {
-            padding-top: 28px;
+            padding-top: 30px;
         }
 
         .header {
@@ -196,11 +194,12 @@
 
         .header__top {
             flex-wrap: wrap;
-            margin-bottom: 0;
+            margin-bottom: 30px;
         }
 
         .header__menu {
-            gap: 0;
+            gap: 10px;
+            margin-bottom: 10px;
         }
 
         .header__menu,
@@ -240,10 +239,9 @@
             z-index: 1;
             font-family: var(--font-heading-family);
             padding: 45px 20px 40px 20px;
-            background-color: black !important;
-            color: #fff;
+            background-color: var(--primary-black);
+            color: var(--white);
             position: fixed;
-            background-color: aliceblue;
             height: 100vh;
             top: 0;
             right: -270px;
@@ -263,18 +261,19 @@
         }
 
         .header__bottom a:hover {
-            color: #fff;
+            color: var(--white);
         }
 
         .backdrop-container {
             transition: all 2s ease;
             width: 100vw;
             height: 100vh;
-            background-color: #00000083;
+            background-color: var(--backdrop-black);
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 0;
+            z-index: 1;
+            display: none;
         }
     }
 
