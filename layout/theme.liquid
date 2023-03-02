@@ -216,7 +216,7 @@
       }
     {% endstyle %}
 
-    {%- comment -%} {{ 'base.css' | asset_url | stylesheet_tag }} {%- endcomment -%}
+    {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'global.css' | asset_url | stylesheet_tag }}
 
     {%- unless settings.type_body_font.system? -%}
@@ -252,6 +252,7 @@
     <!--{% section 'announcement-bar' %}-->
     {% section 'header' %}
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+      {% section 'promo' %}
       {{ content_for_layout }}
     </main>
 
