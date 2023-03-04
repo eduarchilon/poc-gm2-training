@@ -3,12 +3,12 @@
             class="collection-page__route-title">{{ collection.title }}</span></p>
     <div class="collection-page__banner-container">
         {% if section.settings.image %}
-        <div class="collection-page__title-container-image"
+        <div class="collection-page__title-container collection-page__title-container-image"
             style="background-image: url('{{ section.settings.image | image_url }}');">
             <h2 class="collection-page__title">{{ collection.title }}'s</h2>
         </div>
         {%- else -%}
-        <div class="collection-page__title-container">
+        <div class="collection-page__title-container collection-page__title-container-color">
             <h2 class="collection-page__title">{{ collection.title }}'s</h2>
         </div>
         {% endif %}
@@ -23,9 +23,32 @@
 
 {%style%}
   .collection-page__title-container{
-    background-color: {{ section.settings.color_background }};
-    background-image: {{ section.settings.color_background }};
+    height: 300px;
+    width: 100%;
+    padding: 4em;
   }
+
+.collection-page__title-container-image {
+    background-image: {{ section.settings.color_background }};
+    height: 300px;
+    width: 100%;
+    padding: 4em;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.collection-page__title-container-color {
+    background-color: {{ section.settings.color_background }};
+    height: 300px;
+    width: 100%;
+    padding: 4em;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+}
 {% endstyle%}
 
 <style>
@@ -48,26 +71,6 @@
         font-family: var(--font-body-family);
         font-weight: 400;
         text-transform: uppercase;
-    }
-
-    .collection-page__title-container-image {
-        height: 300px;
-        width: 100%;
-        padding: 4em;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        position: relative;
-    }
-
-    .collection-page__title-container {
-        height: 300px;
-        width: 100%;
-        padding: 4em;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        position: relative;
     }
 
     .collection-page__banner-container {
