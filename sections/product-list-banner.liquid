@@ -7,10 +7,6 @@
             style="background-image: url('{{ section.settings.image | image_url }}');">
             <h2 class="collection-page__title">{{ collection.title }}'s</h2>
         </div>
-        {%- elsif section.settings.color_background -%}
-        <div class="collection-page__title-container-gradient">
-            <h2 class="collection-page__title">{{ collection.title }}'s</h2>
-        </div>
         {%- else -%}
         <div class="collection-page__title-container">
             <h2 class="collection-page__title">{{ collection.title }}'s</h2>
@@ -28,16 +24,7 @@
 {%style%}
   .collection-page__title-container{
     background-color: {{ section.settings.color_background }};
-    height: 300px;
-    width: 100%;
-    padding: 4em;
-  }
-
-  .collection-page__title-container-gradient{
     background-image: {{ section.settings.color_background }};
-    height: 300px;
-    width: 100%;
-    padding: 4em;
   }
 {% endstyle%}
 
@@ -64,6 +51,9 @@
     }
 
     .collection-page__title-container-image {
+        height: 300px;
+        width: 100%;
+        padding: 4em;
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
