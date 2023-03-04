@@ -3,7 +3,7 @@
             class="collection-page__route-title">{{ collection.title }}</span></p>
     <div class="collection-page__banner-container">
         {% if section.settings.image %}
-        <div class="collection-page__title-container"
+        <div class="collection-page__title-container-image"
             style="background-image: url('{{ section.settings.image | image_url }}');">
             <h2 class="collection-page__title">{{ collection.title }}'s</h2>
         </div>
@@ -23,7 +23,7 @@
 
 {%style%}
   .collection-page__title-container{
-    background-color: {{ section.settings.color_background }}
+    background-color: "{{ section.settings.color_background }}";
   }
 {% endstyle%}
 
@@ -49,7 +49,7 @@
         text-transform: uppercase;
     }
 
-    .collection-page__title-container {
+    .collection-page__title-container-image {
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
