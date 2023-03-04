@@ -6,7 +6,8 @@
 
       ],
       "settings": {
-        "color_background": "radial-gradient(rgba(137, 143, 239, 1), rgba(153, 142, 239, 1) 50%, rgba(172, 147, 239, 1) 50%, rgba(190, 152, 239, 1) 50%, rgba(206, 156, 239, 1) 50%, rgba(221, 160, 239, 1) 50%, rgba(120, 196, 245, 1) 100%)"
+        "image": "shopify:\/\/shop_images\/cover-img-1_jpg.webp",
+        "color_background": ""
       }
     },
     "product-grid": {
