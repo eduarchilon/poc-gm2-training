@@ -1,0 +1,111 @@
+<div class="container">
+    <p class="collection-page__route">Home <span class="collection-page__route-bar">/</span> <span
+            class="collection-page__route-title">{{ collection.title }}</span></p>
+    <div class="collection-page__banner-container">
+        {% if section.settings.image %}
+        <div class="collection-page__title-container"
+            style="background-image: url('{{ section.settings.image | image_url }}');">
+            <h2 class="collection-page__title">{{ collection.title }}'s</h2>
+        </div>
+        {%- else -%}
+        <div class="collection-page__title-container"
+            style="background-color: {{ section.settings.color_background }}">
+            <h2 class="collection-page__title">{{ collection.title }}'s</h2>
+        </div>
+        {% endif %}
+        <ul class="collection-page-menu">
+            <li><a href="">New arrivals</a></li>
+            <li><a href="">Best sellers</a></li>
+            <li><a href="">Extended widths</a></li>
+            <li><a href="">Sale</a></li>
+        </ul>
+    </div>
+</div>
+
+{%style%}
+{% endstyle%}
+
+<style>
+    .collection-page__route {
+        padding: 1.5em 0;
+        color: var(--primary-green);
+        font-family: var(--font-heading-family);
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .collection-page__route-bar,
+    .collection-page__route-title {
+        color: var(--secondary-black);
+    }
+
+    .collection-page__title {
+        font-size: 40px;
+        font-family: var(--font-body-family);
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    .collection-page__title-container {
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    .collection-page__title-container {
+        height: 300px;
+        width: 100%;
+        padding: 4em;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    .collection-page__banner-container {
+        margin-bottom: 30px;
+    }
+
+    .collection-page-menu {
+        background-color: var(--primary-grey);
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .collection-page-menu li a {
+        color: var(--white);
+        font-family: var(--font-heading-family);
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+</style>
+
+{% schema %}
+{
+    "name": "product-list-banner",
+    "settings": [
+        {
+            "type":"image_picker",
+            "id":"image",
+            "label":"select background image"
+        },
+        {
+            "type": "color_background",
+            "id": "color_background",
+            "label": "Background",
+            "default": "grey"
+        }
+    ],
+    "blocks": [
+    ],
+    "presets": [
+        {
+            "name": "product-list-banner"
+        }
+    ]
+}
+{% endschema %}

@@ -1,5 +1,5 @@
 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
-{%- comment -%} {{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
+{{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   @media screen and (max-width: 749px) {
@@ -7,98 +7,8 @@
       padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
     }
   }
-{%- endstyle -%} {%- endcomment -%}
+{%- endstyle -%}
 
-<div class="container">
-  <p class="collection-page__route">Home <span class="collection-page__route-bar">/</span> <span class="collection-page__route-title">{{ collection.title }}</span></p>
-  <div>
-    <div class="collection-page__title-container" style="background-image: url('https://preview.colorlib.com/theme/footwear/images/cover-img-1.jpg.webp');">
-      <h2 class="collection-page__title">{{ collection.title }}'s</h2>
-    </div>
-    <ul class="collection-page-menu">
-      <li><a href="">New arrivals</a></li>
-      <li><a href="">Best sellers</a></li>
-      <li><a href="">Extended widths</a></li>
-      <li><a href="">Sale</a></li>
-    </ulv>
-  </div>
-  <div>
-    Colelction type of collection
-  </div>
-  <div class="collection-page-all">
-    <h2 class="collection-page-all-title">View all products</h2>
-    <div>
-      ALL PEODUCTS
-    </div>
-  </div>
-</div>
-
-<style>
-  .collection-page__route{
-    padding: 1.5em 0;
-    color: var(--primary-green);
-    font-family: var(--font-heading-family);
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: 500;
-  }
-
-  .collection-page__route-bar, .collection-page__route-title{
-    color: var(--secondary-black);
-  }
-
-  .collection-page__title{
-    font-size: 40px;
-    font-family: var(--font-body-family);
-    font-weight: 400;
-    text-transform: uppercase;
-  }
-
-  .collection-page__title-container{
-    height: 300px;
-    width: 100%;
-    padding: 4em;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    position: relative;
-  }
-
-  .collection-page-menu{
-    background-color: var(--primary-grey);
-    padding: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-  }
-
-  .collection-page-menu li a{
-    color: var(--white);
-    font-family: var(--font-heading-family);
-    font-size: 14px;
-    text-transform: uppercase;
-  }
-
-  .collection-page-all{
-    padding: 7em 0;
-  }
-
-  .collection-page-all-title{
-    color: var(--secondary-grey);
-    font-size: 20px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 5em;
-  }
-</style>
-
-<script>
-  console.log(window.location);
-</script>
-<br>
-<br>
-<br>
 <div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
   <div class="collection-hero__inner page-width">
     <div class="collection-hero__text-wrapper">
