@@ -31,10 +31,10 @@
                 {% endfor %}
             </ul>
             <div class="header__cart">
-                <span class="cart-icon" {%- if current_page %} class="active-menu-item" {% endif %}>{% render 'cart-icon' %}</span>
-                <a {% if current_page != blank %} aria-current="page" {% endif %} href="{{ routes.cart_url }}"
+                <span class="cart-icon">{% render 'cart-icon' %}</span>
+                <a aria-current="page" href="{{ routes.cart_url }}"
                     class="full-unstyled-link link focus-inset" id="cart-icon-bubble">
-                    <span {%- if current_page %} class="active-menu-item" {% endif %}>Cart</span>
+                    <span {%- if window.location.pathname == current_page %} class="active-menu-item" {% endif %}>Cart</span>
                     {%- if cart != empty
                     -%}
                     <span class="cart-count">
