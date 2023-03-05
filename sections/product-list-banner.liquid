@@ -16,17 +16,22 @@
             <h2 class="collection-page__title">{{ collection.title }}'s</h2>
         </div>
         {% endif %}
+        {% if menu.links %}
         <ul class="collection-page-menu">
-            <li><a href="">New arrivals</a></li>
-            <li><a href="">Best sellers</a></li>
-            <li><a href="">Extended widths</a></li>
-            <li><a href="">Sale</a></li>
+            {% for link in section.settings.menu.links %}
+            <li>
+                <a href="{{ link.url }}">{{
+                    link.title | escape
+                    }}</a>
+            </li>
+            {% endfor %}
         </ul>
+        {% endif %}
     </div>
 </div>
 
 {%style%}
-  .collection-page__title-container{
+    .collection-page__title-container{
     height: 300px;
     width: 100%;
     padding: 4em;
@@ -34,15 +39,15 @@
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
-  }
+    }
 
-.collection-page__title-container-gradient {
+    .collection-page__title-container-gradient {
     background-image: {{ section.settings.color_background }};
-}
+    }
 
-.collection-page__title-container-color {
+    .collection-page__title-container-color {
     background-color: {{ section.settings.color_background }};
-}
+    }
 {% endstyle%}
 
 <style>
@@ -101,6 +106,11 @@
             "id": "color_background",
             "label": "Background",
             "default": "grey"
+        },
+        {
+            "type": "link_list",
+            "id": "menu",
+            "label": "menu"
         }
     ],
     "blocks": [
