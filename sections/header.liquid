@@ -20,15 +20,21 @@
             <ul class="header__menu">
                 {% for link in section.settings.menu.links %}
                 <li>
-                    <a {% if link.current %} aria-current="page"{% endif %} href="{{ link.url }}" class="full-unstyled-link" {%- if link.current %} class="header__active-menu-item"{% endif %}>{{
-                        link.title | escape
-                        }}</a>
+                    <a {% if link.current %} aria-current="page" {% endif %} href="{{ link.url }}"
+                        class="full-unstyled-link">
+                        <span {%- if link.current %} class="active-menu-item" {% endif %}>
+                            {{
+                            link.title | escape
+                            }}
+                        </span></a>
                 </li>
                 {% endfor %}
             </ul>
             <div class="header__cart">
-                <span class="cart-icon">{% render 'cart-icon' %}</span>
-                <a href="{{ routes.cart_url }}" class="full-unstyled-link link focus-inset" id="cart-icon-bubble">Cart
+                <span class="cart-icon" {%- if current_page %} class="active-menu-item" {% endif %}>{% render 'cart-icon' %}</span>
+                <a {% if current_page != blank %} aria-current="page" {% endif %} href="{{ routes.cart_url }}"
+                    class="full-unstyled-link link focus-inset" id="cart-icon-bubble">
+                    <span {%- if current_page %} class="active-menu-item" {% endif %}>Cart</span>
                     {%- if cart != empty
                     -%}
                     <span class="cart-count">
@@ -87,7 +93,7 @@
 
 <style>
     /*Desktop*/
-    .header__logo{
+    .header__logo {
         font-family: var(--font-heading-family);
     }
 
@@ -98,7 +104,7 @@
         padding-bottom: 15px;
     }
 
-    .header__top{
+    .header__top {
         margin-bottom: 35px;
     }
 
@@ -123,7 +129,7 @@
         text-transform: uppercase;
     }
 
-    .header__active-menu-item{
+    .active-menu-item {
         color: var(--primary-green);
     }
 
