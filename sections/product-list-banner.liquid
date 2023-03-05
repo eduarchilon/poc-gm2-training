@@ -16,7 +16,6 @@
             <h2 class="collection-page__title">{{ collection.title }}'s</h2>
         </div>
         {% endif %}
-        {% if linklist %}
         <ul class="collection-page-menu">
             {% for link in section.settings.menu.links %}
             <li>
@@ -26,7 +25,6 @@
             </li>
             {% endfor %}
         </ul>
-        {% endif %}
     </div>
 </div>
 
