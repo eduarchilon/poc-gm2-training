@@ -2,14 +2,16 @@
   "sections": {
     "product-list-banner": {
       "type": "product-list-banner",
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
-        "image": "shopify:\/\/shop_images\/cover-img-1_jpg.webp",
+        "image": "shopify://shop_images/cover-img-1_jpg.webp",
         "color_background": "",
         "menu": "product-list-menu"
       }
+    },
+    "collection-recomended": {
+      "type": "collection-recomended",
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -40,6 +42,7 @@
   },
   "order": [
     "product-list-banner",
+    "collection-recomended",
     "product-grid",
     "banner"
   ]
