@@ -20,7 +20,7 @@
             <ul class="header__menu">
                 {% for link in section.settings.menu.links %}
                 <li>
-                    <a href="{{ link.url }}" class="full-unstyled-link">{{
+                    <a href="{{ link.url }}" class="full-unstyled-link" {%- if link.current %} class="header__active-menu-item"{% endif %}>{{
                         link.title | escape
                         }}</a>
                 </li>
@@ -121,6 +121,10 @@
         font-size: 15px;
         letter-spacing: 2px;
         text-transform: uppercase;
+    }
+
+    .header__active-menu-item{
+        color: var(--primary-green);
     }
 
     .header__cart {
