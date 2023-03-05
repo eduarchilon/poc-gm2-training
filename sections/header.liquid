@@ -20,7 +20,7 @@
             <ul class="header__menu">
                 {% for link in section.settings.menu.links %}
                 <li>
-                    <a href="{{ link.url }}" class="full-unstyled-link" {%- if link.current %} class="header__active-menu-item"{% endif %}>{{
+                    <a {% if link.current %} aria-current="page"{% endif %} href="{{ link.url }}" class="full-unstyled-link" {%- if link.current %} class="header__active-menu-item"{% endif %}>{{
                         link.title | escape
                         }}</a>
                 </li>
