@@ -32,9 +32,9 @@
             </ul>
             <div class="header__cart">
                 <span class="cart-icon">{% render 'cart-icon' %}</span>
-                <a aria-current="page" href="{{ routes.cart_url }}"
+                <a href="{{ routes.cart_url }}"
                     class="full-unstyled-link link focus-inset" id="cart-icon-bubble">
-                    <span {%- if window.location.pathname == current_page %} class="active-menu-item" {% endif %}>Cart</span>
+                    <span {%- if routes.cart_url == request.path %} class="active-menu-item" {% endif %}>Cart</span>
                     {%- if cart != empty
                     -%}
                     <span class="cart-count">
