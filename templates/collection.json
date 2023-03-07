@@ -31,19 +31,15 @@
         "padding_bottom": 36
       }
     },
-    "banner": {
-      "type": "main-collection-banner",
-      "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
+    "collection-products": {
+      "type": "collection-products",
+      "settings": {}
     }
   },
   "order": [
     "product-list-banner",
     "collection-recomended",
-    "product-grid",
-    "banner"
+    "collection-products",
+    "product-grid"
   ]
 }
