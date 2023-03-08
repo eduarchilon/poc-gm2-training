@@ -1,6 +1,9 @@
 <div class="product-item">
     <a href="{{ product.url }}">
-        <img class="product-item__img" src="{{ product.featured_media | image_url }}" alt="{{ product.featured_media.alt | escape }}">
+        <div class="product-item-img">
+            <img class="product-item__img" src="{{ product.featured_media | image_url }}"
+                alt="{{ product.featured_media.alt | escape }}">
+        </div>
     </a>
     <div class="product-item__content">
         <h2><a href="{{ product.url }}">{{ product.title }}</a></h2>
@@ -13,6 +16,7 @@
         text-align: center;
         border: 1px solid #dee2e6;
         font-family: var(--font-body-family);
+        max-height: 400px;
     }
 
     .product-item h2 {
@@ -22,9 +26,13 @@
     .product-item h2 a,
     .product-item__price {
         font-family: var(--font-body-family);
-        font-size: 14px !important;
+        font-size: 18px !important;
         color: #000;
         font-weight: normal;
+    }
+
+    .product-item-img{
+        max-width: 100%;
     }
 
     .product-item .product-item__img {
