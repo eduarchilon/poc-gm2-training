@@ -2,19 +2,16 @@
   "sections": {
     "product-list-banner": {
       "type": "product-list-banner",
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
-        "image": "shopify:\/\/shop_images\/cover-img-1_jpg.webp",
+        "image": "shopify://shop_images/cover-img-1_jpg.webp",
         "color_background": "",
         "menu": "product-list-menu"
       }
     },
     "collection-recomended": {
       "type": "collection-recomended",
-      "settings": {
-      }
+      "settings": {}
     },
     "collection-products": {
       "type": "collection-products",
@@ -22,22 +19,49 @@
         "collection": "men"
       }
     },
-    "product-grid": {
-      "type": "main-collection-product-grid",
+    "partners": {
+      "type": "partners",
+      "blocks": {
+        "4f4fd924-cf66-40a9-b401-d7e885cdefbc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/brand-1_jpg.webp"
+          }
+        },
+        "3caa0dfc-0dd8-45b2-84d5-80b1ea7ed27c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/brand-2_jpg.webp"
+          }
+        },
+        "19c7cc4f-96d3-480a-b0e3-66c828fb0fda": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/brand-3_jpg.webp"
+          }
+        },
+        "01bfb54b-f7b6-4b11-ba5e-0abc2832fcf4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/brand-4_jpg.webp"
+          }
+        },
+        "15ab8519-c080-4754-83ea-b7aafda76995": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/brand-5_jpg.webp"
+          }
+        }
+      },
+      "block_order": [
+        "4f4fd924-cf66-40a9-b401-d7e885cdefbc",
+        "3caa0dfc-0dd8-45b2-84d5-80b1ea7ed27c",
+        "19c7cc4f-96d3-480a-b0e3-66c828fb0fda",
+        "01bfb54b-f7b6-4b11-ba5e-0abc2832fcf4",
+        "15ab8519-c080-4754-83ea-b7aafda76995"
+      ],
       "settings": {
-        "products_per_page": 16,
-        "columns_desktop": 4,
-        "image_ratio": "adapt",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "horizontal",
-        "enable_sorting": true,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "title": "TRUSTED PARTNERS"
       }
     }
   },
@@ -45,6 +69,6 @@
     "product-list-banner",
     "collection-recomended",
     "collection-products",
-    "product-grid"
+    "partners"
   ]
 }
