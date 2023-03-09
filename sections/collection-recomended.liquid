@@ -1,0 +1,77 @@
+<div id="collection-recomended" class="container collection-page__collection-recomended">
+    <div class="collection-recomended__item">
+        <h2>Casual</h2>
+        <a href="#" class="shop-link">Shop now</a>
+    </div>
+    <div class="collection-recomended__item">
+        <h2>Casual</h2>
+        <a href="#" class="shop-link">Shop now</a>
+    </div>
+    <div class="collection-recomended__item">
+        <h2>Casual</h2>
+        <a href="#" class="shop-link">Shop now</a>
+    </div>
+</div>
+
+{%style%}
+.collection-recomended__item{
+  height: 400px;
+  background-image: url({{"https://preview.colorlib.com/theme/footwear/images/item-11.jpg.webp"}});
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+{% endstyle%}
+
+<style>
+    .collection-page__collection-recomended{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .collection-recomended-link{
+    font-size: 14px;
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 40px;
+  }
+
+  .collection-recomended__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 10px;
+    gap: 20px;
+  }
+
+  .collection-recomended__item a{
+    font-size: 14px;
+    letter-spacing: 0px;
+  }
+
+  .collection-recomended__item h2{
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 400;
+  }
+</style>
+
+{% schema %}
+{
+    "name": "collection-recomended",
+    "settings": [
+    ],
+    "blocks": [
+    ],
+    "presets": [
+        {
+            "name": "collection-recomended"
+        }
+    ]
+}
+{% endschema %}

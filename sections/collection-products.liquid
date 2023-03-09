@@ -1,0 +1,116 @@
+<div class="container collection-page-all">
+    <h2 class="collection-page-all-title">View all products</h2>
+    <div class="container collection-all-products">
+        <div class="collection-filters">
+            <h5>Quantity: <span>100 u.</span></h5>
+            <h3>Filter:</h3>
+            <div class="collection-filters-item">
+                a
+            </div>
+            <div class="collection-filters-item">
+                b
+            </div>
+            <div class="collection-filters-item">
+                c
+            </div>
+        </div>
+        <div class="collection-all-grid">
+            {% for product in collection.products %}
+            {% render 'product-card', product: product %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+<style>
+    /* .product-card {
+        background-color: red;
+        height: 346px;
+    } */
+
+    .collection-page-all {
+        padding: 7em 0;
+    }
+
+    .collection-page-all-title {
+        color: var(--secondary-grey);
+        font-size: 20px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 5em;
+        font-weight: 700;
+    }
+
+    .collection-all-products {
+        display: flex;
+        gap: 3%;
+    }
+
+    .collection-filters {
+        max-width: 22%;
+        flex: 0 0 22%;
+    }
+
+    .collection-all-grid {
+        max-width: 75%;
+        flex: 0 0 75%;
+        /*flex grow, flex shrink flex basis*/
+    }
+
+    .collection-filters-item {
+        height: 200px;
+        border: 1px solid black;
+        margin-top: 10px;
+    }
+
+
+    .collection-all-grid {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 30px;
+    }
+
+    @media (max-width: 990px) {
+        .collection-all-grid {
+            grid-template-columns: auto;
+        }
+
+        .collection-filters {
+            max-width: 100%;
+        }
+
+
+        .collection-all-grid {
+            max-width: 100%;
+        }
+
+        .collection-all-products {
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+</style>
+
+
+{% schema %}
+{
+    "name": "collection-products",
+    "settings": [
+        {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+        }
+    ],
+    "blocks": [
+    ],
+    "presets": [
+        {
+            "name": "collection-products"
+        }
+    ]
+}
+{% endschema %}
