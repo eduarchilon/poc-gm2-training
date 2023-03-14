@@ -1,0 +1,141 @@
+<div class="container">
+    <p class="product-page__route">Home
+        <span class="product-page__route-bar">/</span>
+        <span class="product-page__route-title">product detail / {{ product.title | escape }}</span>
+    </p>
+
+    <div class="product-detail-main">
+        <div class="product-detail-img">
+            <div class="product-detail-swipper">
+                {%- comment -%} <img class="product-detail__img" src="{{ product.featured_media | image_url }}" alt="">
+                {%- endcomment -%}
+                <img class="product-detail__img" src="{{ product.featured_media | image_url }}" alt="">
+            </div>
+            <div>
+                a a a a
+            </div>
+        </div>
+        <div class="product-detail-election">
+            <h2 class="product-detail-name">{{ product.title | escape }}</h2>
+            <div class="no-js-hidden product-detail-price" id="price-{{ section.id }}" role="status" {{
+                block.shopify_attributes }}>
+                {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'product-detail-price'
+                -%}
+            </div>
+            <div class="product-detail-rating">&#x2605; &#x2605; &#x2605; &#x2605; &#x2605; (74 Rating)</div>
+            <p class="product-detail-description">{{ product.description }}</p>
+            <div>SIZE</div>
+            <div>COLOR</div>
+            {%- comment -%} <label class="form__label" for="Quantity-{{ section.id }}">
+                {{ 'products.product.quantity.label' | t }}
+              </label>
+            <quantity-input class="quantity">
+                <button class="quantity__button no-js-hidden" name="minus" type="button">
+                  <span class="visually-hidden">
+                    {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
+                  </span>
+                  {% render 'icon-minus' %}
+                </button>
+                <input
+                  class="quantity__input"
+                  type="number"
+                  name="quantity"
+                  id="Quantity-{{ section.id }}"
+                  min="1"
+                  value="1"
+                  form="{{ product_form_id }}"
+                >
+                <button class="quantity__button no-js-hidden" name="plus" type="button">
+                  <span class="visually-hidden">
+                    {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
+                  </span>
+                  {% render 'icon-plus' %}
+                </button>
+              </quantity-input> {%- endcomment -%}
+              
+            <div>add to cart o sold out</div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .product-page__route {
+        padding: 1.5em 0;
+        color: var(--primary-green);
+        font-family: var(--font-heading-family);
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .product-page__route-bar,
+    .product-page__route-title {
+        color: var(--secondary-black);
+    }
+
+    .product-detail-main {
+        padding: 5.5em 0;
+        display: flex;
+        gap: 5%;
+    }
+
+    .product-detail-img {
+        width: 65%;
+    }
+
+    .product-detail-swipper {
+        width: 100%;
+    }
+
+    .product-detail__img {
+        object-fit: cover;
+        width: inherit;
+    }
+
+    .product-detail-election {
+        width: 30%;
+        font-family: var(--font-heading-family);
+    }
+
+    .product-detail-name,
+    .product-detail-price {
+        font-weight: 400;
+        font-family: var(--font-body-family);
+    }
+
+    .product-detail-name {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .product-detail-price {
+        font-size: 18px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .product-detail-rating {
+        font-size: 13px;
+    }
+
+    .product-detail-description {
+        margin: 25px 0;
+        font-size: 14px;
+    }
+</style>
+
+{% schema %}
+{
+    "name":"main-product-2",
+    "settings": [],
+    "blocks":[],
+    "presets":[
+       {
+          "name":"main-product-2"
+       }
+    ]
+ }
+{% endschema %}

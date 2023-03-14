@@ -37,6 +37,10 @@ a {
     background-color: #000;
 }
 
+.btn {
+    
+}
+
 /*Tablet*/
 @media screen and (max-width: 1024px) {
     .container {

@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="product-description-btns">
+        <button
+            class="hover:bg-primary-brown bg-secondary-white hover:text-white py-4 px-5 rounded-md uppercase">Description</button>
+        <button
+            class="hover:bg-primary-brown bg-secondary-white hover:text-white py-4 px-5 rounded-md uppercase">Manufacturer</button>
+        <button
+            class="hover:bg-primary-brown bg-secondary-white hover:text-white py-4 px-5 rounded-md uppercase">Review</button>
+    </div>
+    <div class="product-description-texts border border-third-grey">
+        <div class="">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat accusantium iste fugit nihil odit
+                sapiente porro, reiciendis illo laudantium. Temporibus molestiae nihil distinctio ut quaerat error sed
+                velit incidunt tempore.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat accusantium iste fugit nihil odit
+                sapiente porro, reiciendis illo laudantium. Temporibus molestiae nihil distinctio ut quaerat error sed
+                velit incidunt tempore.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat accusantium iste fugit nihil odit
+                sapiente porro, reiciendis illo laudantium. Temporibus molestiae nihil distinctio ut quaerat error sed
+                velit incidunt tempore.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+
+</script>
+
+<style>
+    .product-description-btns,
+    .product-description-texts {
+        font-family: var(--font-heading-family);
+
+    }
+
+    .product-description-btns {
+        font-size: 12px;
+    }
+
+    .product-description-texts {
+        font-size: 14px;
+        margin: 20px 0;
+        padding: 20px;
+    }
+</style>
+
+{% schema %}
+{
+    "name":"product-description",
+    "settings": [],
+    "blocks":[],
+    "presets":[
+       {
+          "name":"product-description"
+       }
+    ]
+ }
+{% endschema %}
