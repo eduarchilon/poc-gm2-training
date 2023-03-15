@@ -1,8 +1,21 @@
 @import url('./variables.css');
+
 /*Desktop*/
 * {
     line-height: normal;
     margin: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    padding: 10px;
+    text-align: center;
 }
 
 .container {
@@ -37,9 +50,7 @@ a {
     background-color: #000;
 }
 
-.btn {
-    
-}
+.btn {}
 
 /*Tablet*/
 @media screen and (max-width: 1024px) {

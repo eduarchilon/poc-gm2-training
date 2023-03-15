@@ -31,7 +31,7 @@
                 {% endfor %}
             </ul>
             <div class="header__cart">
-                <span class="cart-icon">{% render 'cart-icon' %}</span>
+                <span {%- if routes.cart_url == request.path %} class="active-menu-item" {% endif %}>{% render 'cart-icon' %}</span>
                 <a href="{{ routes.cart_url }}"
                     class="full-unstyled-link link focus-inset" id="cart-icon-bubble">
                     <span {%- if routes.cart_url == request.path %} class="active-menu-item" {% endif %}>Cart</span>
@@ -131,6 +131,7 @@
 
     .active-menu-item {
         color: var(--primary-green);
+        fill: var(--primary-green);
     }
 
     .header__cart {

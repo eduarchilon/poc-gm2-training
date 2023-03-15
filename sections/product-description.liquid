@@ -2,14 +2,15 @@
     <div class="product-description-btns">
         <button
             class="hover:bg-primary-brown bg-secondary-white hover:text-white py-4 px-5 rounded-md uppercase">Description</button>
-        <button
+        {%- comment -%} <button
             class="hover:bg-primary-brown bg-secondary-white hover:text-white py-4 px-5 rounded-md uppercase">Manufacturer</button>
         <button
-            class="hover:bg-primary-brown bg-secondary-white hover:text-white py-4 px-5 rounded-md uppercase">Review</button>
+            class="hover:bg-primary-brown bg-secondary-white hover:text-white py-4 px-5 rounded-md uppercase">Review</button> {%- endcomment -%}
     </div>
     <div class="product-description-texts border border-third-grey">
         <div class="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat accusantium iste fugit nihil odit
+            <p>{{ product.description }}</p>
+            {%- comment -%} <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat accusantium iste fugit nihil odit
                 sapiente porro, reiciendis illo laudantium. Temporibus molestiae nihil distinctio ut quaerat error sed
                 velit incidunt tempore.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat accusantium iste fugit nihil odit
@@ -17,7 +18,7 @@
                 velit incidunt tempore.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat accusantium iste fugit nihil odit
                 sapiente porro, reiciendis illo laudantium. Temporibus molestiae nihil distinctio ut quaerat error sed
-                velit incidunt tempore.</p>
+                velit incidunt tempore.</p> {%- endcomment -%}
         </div>
     </div>
 </div>
