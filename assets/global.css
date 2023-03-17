@@ -19,10 +19,10 @@ input[type=number] {
 }
 
 .container {
-    max-width: 1140px;
-    padding: 0 15px;
+    max-width: 1440px !important;
+    padding: 0 12vw !important;
     /* padding: 0 8vw; */
-    margin: auto;
+    margin: auto !important;
 }
 
 ul {
@@ -55,13 +55,19 @@ a {
 /*Tablet*/
 @media screen and (max-width: 1024px) {
     .container {
-        max-width: 960px;
+        padding: 0 5vw !important;
+    }
+}
+
+@media screen and (max-width: 996px) {
+    .container {
+        padding: 0 3vw !important;
     }
 }
 
 /*Mobile*/
 @media screen and (max-width: 768px) {
     .container {
-        max-width: 720px;
+        padding: 0 2vw !important;
     }
 }

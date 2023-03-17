@@ -1,0 +1,96 @@
+<div class="container">
+    {%- if cart != empty -%}
+    <div class="flex justify-between gap-[15%] cart-page-coupon">
+        <div class="w-[50%]  coupon-container">
+            <form action="" class="flex flex-col">
+                <input type="text" placeholder="Your coupon number..."
+                    class="input-coupon border w-100 border-third-grey py-5" />
+                <button class="button-coupon my-4">Apply Coupon</button>
+            </form>
+        </div>
+        <div class="w-[35%] cart-page-total">
+            <div class="bg-grey-50 p-6 cart-total-container">
+                <div class="py-4 text-center"><span class="inline-block w-[48%] font-light">Subtotal:</span><span
+                        class="inline-block w-[48%] font-medium">{{ cart.total_price | money_with_currency }}</span>
+                </div>
+                <div class="py-4 text-center"><span class="inline-block w-[48%] font-light">Delivery:</span><span
+                        class="inline-block w-[48%] font-medium">$0,00</span></div>
+                <div class="py-4 text-center"><span class="inline-block w-[48%] font-light">Discount:</span><span
+                        class="inline-block w-[48%] font-medium">$0,00</span></div>
+                <div class="border-t py-5 text-center"><span class="inline-block w-[48%]">Total:</span><span
+                        class="inline-block w-[48%] font-medium">{{ cart.total_price | money_with_currency }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-center">
+        <button type="submit" id="checkout" class="button-checkout mt-[50px]" name="checkout" form="cart">{{
+            'sections.cart.checkout' | t }} this order</button>
+    </div>
+    {%- endif -%}
+</div>
+
+<style>
+    .cart-page-total,
+    .cart-page-coupon {
+        font-family: var(--font-heading-family);
+        font-size: 14px;
+    }
+
+    .button-coupon {
+        padding: 15px 25px;
+        background-color: #616161;
+        border-radius: 40px;
+        color: #fff;
+        display: block;
+        width: fit-content;
+    }
+
+    .button-coupon:hover {
+        background-color: #000;
+    }
+
+    .input-coupon,
+    .input-coupon::placeholder {
+        text-align: center;
+    }
+
+    .button-checkout {
+        font-family: var(--font-heading-family);
+        padding: 15px 40px;
+        background-color: #616161;
+        border-radius: 40px;
+        color: #fff;
+        display: block;
+        width: fit-content;
+    }
+
+    .button-checkout:hover {
+        background-color: rgb(0, 142, 95);
+    }
+
+    @media screen and (max-width: 768px) {
+        .cart-page-coupon {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 30px;
+        }
+
+        .coupon-container {
+            width: 100%;
+        }
+
+        .coupon-container form input,
+        .cart-page-total,
+        .cart-total-container,
+        .button-checkout {
+            width: 100%;
+        }
+
+        .button-checkout {
+            margin-top: 10px;
+        }
+
+    }
+</style>

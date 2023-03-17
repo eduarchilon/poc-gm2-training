@@ -3,6 +3,16 @@
         <span class="cart-page__route-bar">/</span>
         <span class="cart-page__route-title">Your cart</span>
     </p>
+    {%- if cart == empty -%}
+    <div class="w-100 my-[60px]">
+        <span class="block m-auto w-fit cart-empty-icon text-primary-red rounded-full bg-grey-400 p-20">{% render
+            'cart-empty-icon' %}</span>
+        <h3 class="text-center my-8 text-[24px]">Your cart is empty</h3>
+        <a href="{{ section.settings.link_collection }}" class="my-8 shop-link slider-link m-auto">{{
+            section.settings.link_collection_label |
+            escape }}</a>
+    </div>
+    {% else %}
     <div class="process-container w-100 flex justify-center items-center relative py-[60px]">
         <div class="process-item px-[5%]">
             <p class="rounded-full border-2 border-grey-250 w-[80px] h-[80px] table my-0 mx-auto bg-white mb-[20px]">
@@ -24,7 +34,7 @@
         </div>
     </div>
 
-    <div>
+    <div class="mb-[60px]">
         <table class="text-left w-[100%] m-auto table-cart">
             <thead class="bg-grey-50">
                 <tr class="px-[100px]">
@@ -36,126 +46,88 @@
                 </tr>
             </thead>
             <tbody>
-                {%- for item in cart.items -%}
-                <tr>
-                    <td class="py-[15px] flex items-center gap-4">
-                        <img src="{{ item.image | image_url: width: 300 }}" alt="{{ item.image.alt | escape }}"
-                            loading="lazy" width="100" height="{{ 60 | divided_by: item.image.aspect_ratio | ceil }}">
-                        {{ item.product.title | escape }}
-                    </td>
-                    <td class="text-center">{{ item.original_price | money }}</td>
-                    <td class="text-center">
-                        <button
-                            class="cart-menos cursor-pointer hover:bg-primary-brown bg-secondary-white hover:text-white py-4 px-3 rounded-md font-semibold"
-                            id="cart-menos-{{ item.index | plus: 1 }}">-</button>
-                        <input class="border max-w-[60px] border-third-grey py-4 quantity-cart" type="number"
-                            name="updates[]" id="quantity-{{ item.index | plus: 1 }}" min="1"
-                            value="{{ item.quantity }}">
-                        <button
-                            class="cart-mas cursor-pointer hover:bg-primary-brown bg-secondary-white hover:text-white py-4 px-3 rounded-md font-semibold"
-                            id="cart-mas-{{ item.index | plus: 1 }}">+</button>
-                    </td>
-                    <td class="text-center">{{ item.final_line_price | money }}</td>
-                    <td class="text-center">
-                        <span id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
-                            <a href="{{ item.url_to_remove }}"
-                                class="hover:bg-primary-brown hover:text-white flex w-fit rounded-md justify-center items-center m-auto py-2 px-3 text-center bg-grey-50"
-                                aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
-                                x
-                            </a>
-                        </span>
-                    </td>
-                </tr>
-                {%- endfor -%}
+                <form action="{{ routes.cart_url }}" method="post" id="cart">
+                    {%- for item in cart.items -%}
+                    <tr class="border-b border-grey-50">
+                        <td class="py-[15px] flex items-center gap-4 pl-[20px]">
+                            <img class="table-cart-img" src="{{ item.image | image_url: width: 300 }}"
+                                alt="{{ item.image.alt | escape }}" loading="lazy" width="100"
+                                height="{{ 60 | divided_by: item.image.aspect_ratio | ceil }}">
+                            {{ item.product.title | escape }}
+                        </td>
+                        <td class="text-center">{{ item.original_price | money }}</td>
+                        <td class="text-center">
+                            <button
+                                class="cart-menos cursor-pointer hover:bg-primary-brown bg-secondary-white hover:text-white py-4 px-3 rounded-md font-semibold"
+                                id="cart-menos-{{ item.index | plus: 1 }}">-</button>
+                            <input class="border max-w-[60px] border-third-grey py-4 quantity-cart" type="number"
+                                form="cart" name="updates[]" id="quantity-{{ item.index | plus: 1 }}" min="1"
+                                value="{{ item.quantity }}"
+                                aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}">
+                            <button
+                                class="cart-mas cursor-pointer hover:bg-primary-brown bg-secondary-white hover:text-white py-4 px-3 rounded-md font-semibold"
+                                id="cart-mas-{{ item.index | plus: 1 }}">+</button>
+                        </td>
+                        <td class="text-center">{{ item.final_line_price | money }}</td>
+                        <td class="text-center">
+                            <span id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
+                                <a href="{{ item.url_to_remove }}"
+                                    class="hover:bg-primary-brown hover:text-white flex w-fit rounded-md justify-center items-center m-auto py-2 px-3 text-center bg-grey-50"
+                                    aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
+                                    x
+                                </a>
+                            </span>
+                        </td>
+                    </tr>
+                    {%- endfor -%}
+                </form>
             </tbody>
         </table>
     </div>
-
-    <div class="w-100 mt-[60px]">
-        <span class="block m-auto w-fit cart-empty-icon text-primary-red rounded-full bg-grey-400 p-20">{% render
-            'cart-empty-icon' %}</span>
-        <h3 class="text-center my-8 text-[24px]">Your cart is empty</h3>
-        <a href="{{ section.settings.link_collection }}" class="my-8 shop-link slider-link m-auto">{{
-            section.settings.link_collection_label |
-            escape }}</a>
-    </div>
+    {%- endif -%}
 </div>
 
-<label for="item1">Ítem 1:</label>
-<input type="number" id="item1" min="0" value="0">
-
-<label for="item2">Ítem 2:</label>
-<input type="number" id="item2" min="0" value="0">
-
-<label for="item3">Ítem 3:</label>
-<input type="number" id="item3" min="0" value="0">
-
-<button type="button" id="boton">aaa</button>
-
 <script>
-    let cantidadSeleccionada = {
-        item1: 0,
-        item2: 0,
-        item3: 0
-    };
-
-    function actualizarCantidad(id) {
-        cantidadSeleccionada[id] = document.getElementById(id).valueAsNumber;
-    }
-
-    const elementos = document.querySelectorAll('input[type="number"]');
-
-    for (let i = 0; i < elementos.length; i++) {
-        const elemento = elementos[i];
-        elemento.addEventListener('change', function () {
-            actualizarCantidad(elemento.id);
-        });
-    }
-
-    const boton = document.getElementById('boton');
-
-    boton.addEventListener('click', function () {
-        let total = 0;
-        for (const key in cantidadSeleccionada) {
-            total += cantidadSeleccionada[key];
-        }
-        alert(`Total seleccionado: ${total}`);
-    });
-</script>
-
-
-<script>
-    // let quantity = document.getElementById(`quantity`)
     let quantityCart = document.querySelectorAll('.quantity-cart')
     let resta = document.querySelectorAll(".cart-menos")
     let suma = document.querySelectorAll(".cart-mas")
 
 
     //INPUT
-    let items = []
+    let cantidadSeleccionada = []
 
     for (let i = 0; i < quantityCart.length; i++) {
-        items.push({ key: i + 1, id: quantityCart[i].id, value: quantityCart[i].valueAsNumber })
-        quantityCart[i].addEventListener('change', actualizarCantidad(quantityCart[i].id))
+        // console.log(quantityCart[i].ariaLabel);
+        cantidadSeleccionada.push({ key: i + 1, id: quantityCart[i].id, value: quantityCart[i].valueAsNumber })
+        quantityCart[i].addEventListener('change', () => actualizarCantidad(quantityCart[i].id))
         suma[i].addEventListener('click', () => sumar(quantityCart[i]))
         resta[i].addEventListener('click', () => restar(quantityCart[i]))
     }
 
     function actualizarCantidad(id) {
         cantidadSeleccionada[id] = document.getElementById(id).valueAsNumber;
-        console.log('CANTIDAD', cantidadSeleccionada[id]);
+        // console.log('CANTIDAD', cantidadSeleccionada[id]);
+        document.getElementById("cart").submit();
     }
 
     //SUMAR
     const sumar = (item) => {
-        let total = item.value
-        console.log("SUMAR", item.value);
+        let total = Number(item.value)
+        total += 1
+        item.value = total
+        // console.log("SUMAR", total);
     }
 
     //RESTAR
     const restar = (item) => {
-        let total = item.value
-        console.log("RESTAR", item.value);
+        let total = Number(item.value)
+        if (total > Number(item.min)) {
+            total -= 1
+            item.value = total
+        } else {
+            item.value = 1
+        }
+        // console.log("RESTAR", total);
     }
 </script>
 
@@ -174,13 +146,11 @@
         border-radius: 45px 0 0 45px;
     }
 
-    th:first-child,
-    td:first-child {
+    th:first-child {
         padding-left: 20px;
     }
 
-    th:last-child,
-    td:last-child {
+    th:last-child {
         padding-right: 20px;
     }
 
@@ -204,6 +174,24 @@
 
     .cart-empty-icon svg {
         width: 100px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .table-cart-img {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+
+        .cart-menos,
+        .cart-mas {
+            display: none;
+        }
+
+        .table-cart {
+            font-size: 12px;
+        }
     }
 </style>
 

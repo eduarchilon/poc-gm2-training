@@ -1,23 +1,25 @@
-<div class="container collection-page-all">
-    <h2 class="collection-page-all-title">View all products</h2>
-    <div class="container collection-all-products">
-        <div class="collection-filters">
-            <h5>Quantity: <span>100 u.</span></h5>
-            <h3>Filter:</h3>
-            <div class="collection-filters-item">
-                a
+<div class="container">
+    <div class="collection-page-all">
+        <h2 class="collection-page-all-title">View all products</h2>
+        <div class="collection-all-products">
+            <div class="collection-filters">
+                <h5>Quantity: <span>100 u.</span></h5>
+                <h3>Filter:</h3>
+                <div class="collection-filters-item">
+                    a
+                </div>
+                <div class="collection-filters-item">
+                    b
+                </div>
+                <div class="collection-filters-item">
+                    c
+                </div>
             </div>
-            <div class="collection-filters-item">
-                b
+            <div class="collection-all-grid">
+                {% for product in collection.products %}
+                {% render 'product-card', product: product %}
+                {% endfor %}
             </div>
-            <div class="collection-filters-item">
-                c
-            </div>
-        </div>
-        <div class="collection-all-grid">
-            {% for product in collection.products %}
-            {% render 'product-card', product: product %}
-            {% endfor %}
         </div>
     </div>
 </div>
