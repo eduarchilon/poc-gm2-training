@@ -22,7 +22,8 @@
                         class="cursor-pointer hover:bg-primary-brown bg-secondary-white hover:text-white py-4 px-6 rounded-md font-semibold"
                         id="pdp-menos">-</span>
 
-                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                    <input type="hidden" class="idvariant" name="id"
+                        value="{{ product.selected_or_first_available_variant.id }}">
                     <input class="border border-third-grey py-4" type="number" name="quantity" id="quantity" min="1"
                         value="1">
 
@@ -41,6 +42,35 @@
         </div>
     </div>
 </div>
+
+<div class="container">
+    <h1 class="mb-[100px]">VARIANT SELECTOR</h1>
+    {% form 'product', product %}
+    <input type="text" class="idvariant" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+    <input class="border border-third-grey py-4" type="number" name="quantity" id="quantity" min="1" value="1">
+
+
+    <button
+        class="hover:fill-white cursor-pointer flex gap-4 items-center cursor-pointer w-fit mt-3 hover:bg-primary-brown bg-secondary-white hover:text-white py-4 px-5 rounded-md"
+        type="submit">
+        <span class="cart-icon">{% render 'cart-icon' %}</span>
+        Add to cart
+    </button>
+
+    {%- endform -%}
+</div>
+<script>
+    fetch('/products/womens-boots-shoes-maca-4.json')
+        .then(response => response.json())
+        .then(json => console.log(json))
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
+</script>
+
+
+
 
 <script>
     let quantity = document.getElementById("quantity")
@@ -138,13 +168,13 @@
 
 {% schema %}
 {
-    "name":"main-product-2",
-    "settings": [],
-    "blocks":[],
-    "presets":[
-       {
-          "name":"main-product-2"
-       }
-    ]
- }
+"name":"main-product-2",
+"settings": [],
+"blocks":[],
+"presets":[
+{
+"name":"main-product-2"
+}
+]
+}
 {% endschema %}

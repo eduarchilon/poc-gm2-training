@@ -9,7 +9,12 @@
       "type": "product-description",
       "blocks": {},
       "settings": {}
+    },
+    "product-test": {
+      "type": "product-variant-test",
+      "blocks": {},
+      "settings": {}
     }
   },
-  "order": ["main-product", "product-description"]
+  "order": ["main-product", "product-description", "product-test"]
 }
