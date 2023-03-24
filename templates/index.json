@@ -32,23 +32,12 @@
             "head-3": "UP TO 30% OFF",
             "text": "New stylish shoes for men"
           }
-        },
-        "6f1f9be8-c6cd-4efe-8aad-fd3ac3f129f2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Captura_de_Pantalla_2023-01-20_a_la_s_10.03.23.png",
-            "head-1": "Hola",
-            "head-2": "Oferta",
-            "head-3": "Nueva oferta",
-            "text": "a solo 500 pesos"
-          }
         }
       },
       "block_order": [
         "6dd012e9-efcb-4128-92b8-5d42bfb177ea",
         "d349b817-a5bd-43f3-bce2-7fe9914ba0d3",
-        "9c35dee2-c53d-4ab7-a783-71fd614224d6",
-        "6f1f9be8-c6cd-4efe-8aad-fd3ac3f129f2"
+        "9c35dee2-c53d-4ab7-a783-71fd614224d6"
       ],
       "settings": {
         "link_collection": "shopify:\/\/collections",
