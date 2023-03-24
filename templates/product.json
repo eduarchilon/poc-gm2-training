@@ -12,6 +12,25 @@
     },
     "test-swipper": {
       "type": "test-swipper",
+      "blocks": {
+        "e2d5a667-78d7-4057-ba5c-68c69fd899e7": {
+          "type": "slide",
+          "settings": {
+            "color_background": "linear-gradient(262deg, rgba(17, 189, 251, 1) 15%, rgba(33, 249, 150, 1) 85%)"
+          }
+        },
+        "4543811a-76af-4922-9ce2-354b9341eb88": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cover-img-1_jpg.webp",
+            "color_background": "grey"
+          }
+        }
+      },
+      "block_order": [
+        "e2d5a667-78d7-4057-ba5c-68c69fd899e7",
+        "4543811a-76af-4922-9ce2-354b9341eb88"
+      ],
       "settings": {
       }
     }
