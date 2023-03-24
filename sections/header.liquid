@@ -6,7 +6,7 @@
             <h1 class="header__logo">
                 <a href="{{ routes.root_url }}" class="full-unstyled-link focus-inset">
                     {% if section.settings.image %}
-                        <img width="{{ section.settings.range.image_size }}" src="{{ section.settings.image.src | image_url }}" alt="{{ section.settings.image.alt  }}">
+                        <img width="{{ section.settings.image_size }}" src="{{ section.settings.image.src | image_url }}" alt="{{ section.settings.image.alt  }}">
                     {% else %}
                         {{ shop.name }}
                     {% endif %}
@@ -80,6 +80,7 @@
             "label": "Tamaño de logo en px",
             "default": 200,
             "min": 50,
+            "unit": "px",
             "max": 300,
             "step": 50
         }
