@@ -30,7 +30,8 @@
       "header": {
         "type": "header",
         "settings": {
-          "menu": "main-menu"
+          "menu": "main-menu",
+          "image": "shopify:\/\/shop_images\/logo.png"
         }
       },
       "footer": {
@@ -91,6 +92,12 @@
         ],
         "settings": {
           "copy-text": "Copyright ©2023 All rights reserved | This template is made with ♥  by Colorlib Demo Images: Unsplash , Pexels.com"
+        }
+      },
+      "promo": {
+        "type": "promo",
+        "settings": {
+          "text-promo": "25% off (Almost) Everything! Use Code: Summer Sale"
         }
       }
     },
