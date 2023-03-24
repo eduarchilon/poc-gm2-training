@@ -8,7 +8,7 @@
                     {% if shop.name %}
                     {{ shop.name }}
                     {% else %}
-                    <img src="{{ section.settings.image | image_url }}" alt="{{ section.settings.image.alt  }}">
+                    <img src="{{ section.settings.image.src }}" alt="{{ section.settings.image.alt  }}">
                     {% endif %}
                 </a>
             </h1>
