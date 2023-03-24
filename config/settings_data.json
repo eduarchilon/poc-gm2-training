@@ -31,7 +31,8 @@
         "type": "header",
         "settings": {
           "menu": "main-menu",
-          "image": "shopify:\/\/shop_images\/logo.png"
+          "image": "shopify:\/\/shop_images\/logo.png",
+          "image_size": 200
         }
       },
       "footer": {
