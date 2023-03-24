@@ -17,7 +17,8 @@
                 <a href="#" class="shop-link slider-link block m-auto">SHOP COLLECTION</a>
             </div>
             {% elsif block.settings.color_background %}
-            <div class="swiper-slide swiper-slide-gradient text-white relative bg-grey-50 cursor-pointer text-center">
+            <div class="swiper-slide swiper-slide-gradient text-white relative bg-grey-50 cursor-pointer text-center"
+            style="background-image: {{ block.settings.color_background }};">
                 <h2 class="slider-head-1">MEN'S</h2>
                 <h2 class="slider-head-2">SHOES</h2>
                 <h2 class="slider-head-3">COLLECTION</h2>
@@ -25,7 +26,8 @@
                 <a href="#" class="shop-link slider-link block m-auto">SHOP COLLECTION</a>
             </div>
             {% else %}
-            <div class="swiper-slide swiper-slide-color text-white relative bg-grey-50 cursor-pointer text-center">
+            <div class="swiper-slide swiper-slide-color text-white relative bg-grey-50 cursor-pointer text-center"
+            style="background-color: {{ block.settings.color_background }};">
                 <h2 class="slider-head-1">MEN'S</h2>
                 <h2 class="slider-head-2">SHOES</h2>
                 <h2 class="slider-head-3">COLLECTION</h2>
@@ -79,23 +81,6 @@
         {
             "name":"Slide image",
             "type":"slide",
-            "settings":[
-                {
-                    "type":"image_picker",
-                    "id":"image",
-                    "label":"Select image slide"
-                },
-                {
-                    "type": "color_background",
-                    "id": "color_background",
-                    "label": "Background",
-                    "default": "grey"
-                }
-            ]
-        },
-        {
-            "name":"Slider image",
-            "type":"slider",
             "settings":[
                 {
                     "type":"image_picker",
