@@ -6,11 +6,14 @@
             {%- comment -%} <div class="swiper-slide text-white relative cursor-pointer">
                 <img class="block object-cover w-[100%]" src="https://cdn.shopify.com/s/files/1/0705/9449/4786/files/img_bg_2_jpg.webp?v=1675555319" alt="">
             </div> {%- endcomment -%}
+            {% for block in section.blocks %}
             <div class="swiper-slide text-white relative bg-grey-50 cursor-pointer text-center"
             {% if block.settings.color_background  %} 
             style="background-image: '{{ block.settings.color_background }};'"
-            {% else %}
+            {%- elsif section.settings.image -%}
             style="background-image: url('{{ block.settings.image | image_url }}');" 
+            {%- else -%}
+            style="background-color: '{{ block.settings.color_background }}';" 
             {% endif %}>
                 <h2 class="slider-head-1">MEN'S</h2>
                 <h2 class="slider-head-2">SHOES</h2>
@@ -24,6 +27,7 @@
                 <a href="{{ block.settings.link_collection }}" class="shop-link slider-link">{{ block.settings.link_collection_label |
                     escape }}</a> {%- endcomment -%}
             </div>
+            {% endfor %}
             ...
         </div>
         <!-- If we need pagination -->
