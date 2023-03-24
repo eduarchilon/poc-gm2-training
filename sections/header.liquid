@@ -5,7 +5,12 @@
         <div class="header__top">
             <h1 class="header__logo">
                 <a href="{{ routes.root_url }}" class="full-unstyled-link focus-inset">
-                    <img src="{{ section.settings.image.src | image_url }}" alt="{{ section.settings.image.alt  }}">
+                    {% if section.settings.image %}
+                        <img src="{{ section.settings.image.src | image_url }}" alt="{{ section.settings.image.alt  }}">
+                    {% else %}
+                        {{ shop.name }}
+                    {% endif %}
+                    
                 </a>
             </h1>
             <form action="#" class="search-form">
