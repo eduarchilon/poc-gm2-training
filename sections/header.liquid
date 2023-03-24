@@ -5,11 +5,7 @@
         <div class="header__top">
             <h1 class="header__logo">
                 <a href="{{ routes.root_url }}" class="full-unstyled-link focus-inset">
-                    {% if shop.name %}
-                    {{ shop.name }}
-                    {% else %}
                     <img src="{{ section.settings.image.src }}" alt="{{ section.settings.image.alt  }}">
-                    {% endif %}
                 </a>
             </h1>
             <form action="#" class="search-form">
@@ -71,7 +67,7 @@
        {
         "type":"image_picker",
         "id":"image",
-        "label":"select background image"
+        "label":"select logo"
         }
     ]
  }
