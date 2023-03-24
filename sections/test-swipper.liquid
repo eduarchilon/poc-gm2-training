@@ -3,9 +3,6 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper w-[100%] h-[600px]">
             <!-- Slides -->
-            {%- comment -%} <div class="swiper-slide text-white relative cursor-pointer">
-                <img class="block object-cover w-[100%]" src="https://cdn.shopify.com/s/files/1/0705/9449/4786/files/img_bg_2_jpg.webp?v=1675555319" alt="">
-            </div> {%- endcomment -%}
             {% for block in section.blocks %}
             {% if block.settings.image  %} 
             <div class="swiper-slide text-white relative bg-grey-50 cursor-pointer text-center"
@@ -49,14 +46,6 @@
         background-position: center center;
         background-repeat: no-repeat;
         position: relative;
-    }
-
-    .swiper-slide-gradient {
-        background: {{ block.settings.color_background }};
-    }
-
-    .swiper-slide-color {
-        background: {{ block.settings.color_background }};
     }
 {%- endstyle -%}
 
