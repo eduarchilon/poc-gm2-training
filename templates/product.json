@@ -10,11 +10,15 @@
       "blocks": {},
       "settings": {}
     },
-    "product-test": {
-      "type": "product-variant-test",
+    "test-swipper": {
+      "type": "test-swipper",
       "blocks": {},
       "settings": {}
     }
   },
-  "order": ["main-product", "product-description", "product-test"]
+  "order": [
+    "main-product",
+    "product-description",
+    "test-swipper"
+  ]
 }

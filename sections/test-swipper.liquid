@@ -1,0 +1,105 @@
+<div class="">
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper w-[100%] h-[600px]">
+            <!-- Slides -->
+            <div class="swiper-slide text-white relative">
+                <img class="block object-cover w-[100%]" src="https://cdn.shopify.com/s/files/1/0705/9449/4786/files/img_bg_2_jpg.webp?v=1675555319" alt="">
+            </div>
+            <div class="swiper-slide text-white relative">
+                <h2 class="slider-head-1">{{ block.settings.head-1 }}</h2>
+                <h2 class="slider-head-2">{{ block.settings.head-2 }}</h2>
+                <h2 class="slider-head-3">{{ block.settings.head-3 }}</h2>
+                <p class="slider-text">{{ block.settings.text }}</p>
+                <a href="{{ block.settings.link_collection }}" class="shop-link slider-link">{{ block.settings.link_collection_label |
+                    escape }}</a>
+            </div>
+            ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+</div>
+
+<style>
+    
+</style>
+
+{% schema %}
+{
+    "name":"test-swipper",
+    "settings":[
+       
+    ],
+    "blocks":[
+        {
+            "name":"Slide image",
+            "type":"image",
+            "settings":[
+                {
+                    "type":"image_picker",
+                    "id":"image",
+                    "label":"Select image slide"
+                },
+                {
+                    "type":"text",
+                    "id":"head-1",
+                    "label":"Head 1"
+                },
+                {
+                    "type":"text",
+                    "id":"head-2",
+                    "label":"Head 2"
+                },
+                {
+                    "type":"text",
+                    "id":"head-3",
+                    "label":"Head 3"
+                },
+                {
+                    "type":"text",
+                    "id":"text",
+                    "label":"text"
+                }
+            ]
+        }
+    ],
+    "presets":[
+       {
+          "name":"test-swipper"
+       }
+    ]
+ }
+{% endschema %}
+
+<script>
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+            enabled: false,
+            hide: true,
+        },
+    });
+</script>
