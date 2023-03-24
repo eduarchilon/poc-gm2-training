@@ -65,14 +65,23 @@
     "name":"header",
     "settings":[
        {
-          "type":"link_list",
-          "id":"menu",
-          "label":"t:sections.header.settings.menu.label"
+            "type":"link_list",
+            "id":"menu",
+            "label":"t:sections.header.settings.menu.label"
        },
        {
-        "type":"image_picker",
-        "id":"image",
-        "label":"select logo"
+            "type":"image_picker",
+            "id":"image",
+            "label":"select logo"
+        },
+        {
+            "type": "range",
+            "id": "image_size",
+            "label": "Tamaño de imagen",
+            "default": 500,
+            "min": 100,
+            "max": 1000,
+            "step": 50
         }
     ]
  }
