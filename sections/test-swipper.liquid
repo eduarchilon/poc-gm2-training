@@ -8,10 +8,10 @@
             </div> {%- endcomment -%}
             {% for block in section.blocks %}
             <div class="swiper-slide text-white relative bg-grey-50 cursor-pointer text-center"
-            {% if block.settings.color_background  %} 
-            style="background-image: '{{ block.settings.color_background }};'"
-            {%- elsif section.settings.image -%}
-            style="background-image: url('{{ block.settings.image | image_url }}');" 
+            {% if block.settings.image  %} 
+            style="background-image: url('{{ block.settings.image | image_url }}');"
+            {%- elsif section.settings.color_background -%}
+            style="background-image: '{{ block.settings.color_background }};'" 
             {%- else -%}
             style="background-color: '{{ block.settings.color_background }}';" 
             {% endif %}>
