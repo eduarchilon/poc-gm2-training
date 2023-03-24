@@ -16,7 +16,7 @@
                 <p class="slider-text">New trending shoes</p>
                 <a href="#" class="shop-link slider-link block m-auto">SHOP COLLECTION</a>
             </div>
-            {% elsif block.settings.color_background %}
+            {% elsif block.settings.image == blank %}
             <div class="swiper-slide swiper-slide-gradient text-white relative bg-grey-50 cursor-pointer text-center"
             style="background-image: {{ block.settings.color_background }}">
                 <h2 class="slider-head-1">MEN'S</h2>
