@@ -4,7 +4,13 @@
     <div class="container header-container">
         <div class="header__top">
             <h1 class="header__logo">
-                <a href="{{ routes.root_url }}" class="full-unstyled-link focus-inset">{{ shop.name }}</a>
+                <a href="{{ routes.root_url }}" class="full-unstyled-link focus-inset">
+                    {% if shop.name %}
+                    {{ shop.name }}
+                    {% else %}
+                    <img src="{{ section.settings.image | image_url }}" alt="{{ section.settings.image.alt  }}">
+                    {% endif %}
+                </a>
             </h1>
             <form action="#" class="search-form">
                 <input type="search" placeholder="Search" class="search__input" />
@@ -55,15 +61,20 @@
 
 {% schema %}
 {
-"name":"header",
-"settings":[
-{
-"type":"link_list",
-"id":"menu",
-"label":"t:sections.header.settings.menu.label"
-}
-]
-}
+    "name":"header",
+    "settings":[
+       {
+          "type":"link_list",
+          "id":"menu",
+          "label":"t:sections.header.settings.menu.label"
+       },
+       {
+        "type":"image_picker",
+        "id":"image",
+        "label":"select background image"
+        }
+    ]
+ }
 {% endschema %}
 
 <script>
