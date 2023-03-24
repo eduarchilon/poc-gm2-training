@@ -17,8 +17,7 @@
                 <a href="#" class="shop-link slider-link block m-auto">SHOP COLLECTION</a>
             </div>
             {% elsif block.settings.color_background %}
-            <div class="swiper-slide text-white relative bg-grey-50 cursor-pointer text-center"
-            style="background-image: '{{ block.settings.color_background }}';">
+            <div class="swiper-slide swiper-slide-gradient text-white relative bg-grey-50 cursor-pointer text-center">
                 <h2 class="slider-head-1">MEN'S</h2>
                 <h2 class="slider-head-2">SHOES</h2>
                 <h2 class="slider-head-3">COLLECTION</h2>
@@ -26,8 +25,7 @@
                 <a href="#" class="shop-link slider-link block m-auto">SHOP COLLECTION</a>
             </div>
             {% else %}
-            <div class="swiper-slide text-white relative bg-grey-50 cursor-pointer text-center"
-            style="background-color: '{{ block.settings.color_background }}';">
+            <div class="swiper-slide swiper-slide-color text-white relative bg-grey-50 cursor-pointer text-center">
                 <h2 class="slider-head-1">MEN'S</h2>
                 <h2 class="slider-head-2">SHOES</h2>
                 <h2 class="slider-head-3">COLLECTION</h2>
@@ -58,6 +56,14 @@
         background-position: center center;
         background-repeat: no-repeat;
         position: relative;
+    }
+
+    .swiper-slide-gradient{
+        background-image: {{ block.settings.color_background }};
+    }
+
+    .swiper-slide-color{
+        background-color: {{ block.settings.color_background }};
     }
 {%- endstyle -%}
 
