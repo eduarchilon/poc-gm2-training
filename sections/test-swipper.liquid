@@ -8,7 +8,7 @@
             </div> {%- endcomment -%}
             <div class="swiper-slide text-white relative bg-grey-50 cursor-pointer text-center"
             {% if block.settings.color_background  %} 
-            style="background-image: '{{ block.settings.color_background }}';"
+            style="background-image: '{{ block.settings.color_background }};'"
             {% else %}
             style="background-image: url('{{ block.settings.image | image_url }}');" 
             {% endif %}>
