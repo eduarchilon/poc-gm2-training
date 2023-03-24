@@ -7,7 +7,7 @@
                 <img class="block object-cover w-[100%]" src="https://cdn.shopify.com/s/files/1/0705/9449/4786/files/img_bg_2_jpg.webp?v=1675555319" alt="">
             </div> {%- endcomment -%}
             {% for block in section.blocks %}
-            {% if block.settings.imagen  %} 
+            {% if block.settings.image  %} 
             <div class="swiper-slide text-white relative bg-grey-50 cursor-pointer text-center"
             style="background-image: url('{{ block.settings.image | image_url }}');">
                 <h2 class="slider-head-1">MEN'S</h2>
@@ -74,7 +74,6 @@
 {
     "name":"test-swipper",
     "settings":[
-       
     ],
     "blocks":[
         {
@@ -83,7 +82,7 @@
             "settings":[
                 {
                     "type":"image_picker",
-                    "id":"imagen",
+                    "id":"image",
                     "label":"Select image slide"
                 },
                 {
@@ -91,26 +90,23 @@
                     "id": "color_background",
                     "label": "Background",
                     "default": "grey"
+                }
+            ]
+        },
+        {
+            "name":"Slider image",
+            "type":"slider",
+            "settings":[
+                {
+                    "type":"image_picker",
+                    "id":"image",
+                    "label":"Select image slide"
                 },
                 {
-                    "type":"text",
-                    "id":"head-1",
-                    "label":"Head 1"
-                },
-                {
-                    "type":"text",
-                    "id":"head-2",
-                    "label":"Head 2"
-                },
-                {
-                    "type":"text",
-                    "id":"head-3",
-                    "label":"Head 3"
-                },
-                {
-                    "type":"text",
-                    "id":"text",
-                    "label":"text"
+                    "type": "color_background",
+                    "id": "color_background",
+                    "label": "Background",
+                    "default": "grey"
                 }
             ]
         }
