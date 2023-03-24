@@ -7,26 +7,34 @@
                 <img class="block object-cover w-[100%]" src="https://cdn.shopify.com/s/files/1/0705/9449/4786/files/img_bg_2_jpg.webp?v=1675555319" alt="">
             </div> {%- endcomment -%}
             {% for block in section.blocks %}
-            <div class="swiper-slide text-white relative bg-grey-50 cursor-pointer text-center"
             {% if block.settings.image  %} 
-            style="background-image: url('{{ block.settings.image | image_url }}');"
-            {%- elsif block.settings.color_background -%}
-            style="background-image: '{{ block.settings.color_background }};'" 
-            {%- else -%}
-            style="background-color: '{{ block.settings.color_background }}';" 
-            {% endif %}>
+            <div class="swiper-slide text-white relative bg-grey-50 cursor-pointer text-center"
+            style="background-image: url('{{ block.settings.image | image_url }}');">
                 <h2 class="slider-head-1">MEN'S</h2>
                 <h2 class="slider-head-2">SHOES</h2>
                 <h2 class="slider-head-3">COLLECTION</h2>
                 <p class="slider-text">New trending shoes</p>
                 <a href="#" class="shop-link slider-link block m-auto">SHOP COLLECTION</a>
-                {%- comment -%} <h2 class="slider-head-1">{{ block.settings.head-1 }}</h2>
-                <h2 class="slider-head-2">{{ block.settings.head-2 }}</h2>
-                <h2 class="slider-head-3">{{ block.settings.head-3 }}</h2>
-                <p class="slider-text">{{ block.settings.text }}</p>
-                <a href="{{ block.settings.link_collection }}" class="shop-link slider-link">{{ block.settings.link_collection_label |
-                    escape }}</a> {%- endcomment -%}
             </div>
+            {% elsif block.settings.color_background %}
+            <div class="swiper-slide text-white relative bg-grey-50 cursor-pointer text-center"
+            style="background-image: '{{ block.settings.color_background }}';">
+                <h2 class="slider-head-1">MEN'S</h2>
+                <h2 class="slider-head-2">SHOES</h2>
+                <h2 class="slider-head-3">COLLECTION</h2>
+                <p class="slider-text">New trending shoes</p>
+                <a href="#" class="shop-link slider-link block m-auto">SHOP COLLECTION</a>
+            </div>
+            {% else %}
+            <div class="swiper-slide text-white relative bg-grey-50 cursor-pointer text-center"
+            style="background-color: '{{ block.settings.color_background }}';">
+                <h2 class="slider-head-1">MEN'S</h2>
+                <h2 class="slider-head-2">SHOES</h2>
+                <h2 class="slider-head-3">COLLECTION</h2>
+                <p class="slider-text">New trending shoes</p>
+                <a href="#" class="shop-link slider-link block m-auto">SHOP COLLECTION</a>
+            </div>
+            {% endif %}
             {% endfor %}
             ...
         </div>
@@ -65,7 +73,7 @@
     "blocks":[
         {
             "name":"Slide image",
-            "type":"image",
+            "type":"slide",
             "settings":[
                 {
                     "type":"image_picker",
