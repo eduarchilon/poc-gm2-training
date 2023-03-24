@@ -2,18 +2,18 @@
   "sections": {
     "main-product": {
       "type": "main-product",
-      "blocks": {},
-      "settings": {}
+      "settings": {
+      }
     },
     "product-description": {
       "type": "product-description",
-      "blocks": {},
-      "settings": {}
+      "settings": {
+      }
     },
     "test-swipper": {
       "type": "test-swipper",
-      "blocks": {},
-      "settings": {}
+      "settings": {
+      }
     }
   },
   "order": [

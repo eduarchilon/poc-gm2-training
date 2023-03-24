@@ -3,16 +3,21 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper w-[100%] h-[600px]">
             <!-- Slides -->
-            <div class="swiper-slide text-white relative">
+            {%- comment -%} <div class="swiper-slide text-white relative cursor-pointer">
                 <img class="block object-cover w-[100%]" src="https://cdn.shopify.com/s/files/1/0705/9449/4786/files/img_bg_2_jpg.webp?v=1675555319" alt="">
-            </div>
-            <div class="swiper-slide text-white relative">
-                <h2 class="slider-head-1">{{ block.settings.head-1 }}</h2>
+            </div> {%- endcomment -%}
+            <div class="swiper-slide {% if block.settings.color_background  %} swiper-bg-gradient {% else %} swiper-bg-image {% endif %}text-white relative bg-grey-50 cursor-pointer text-center">
+                <h2 class="slider-head-1">MEN'S</h2>
+                <h2 class="slider-head-2">SHOES</h2>
+                <h2 class="slider-head-3">COLLECTION</h2>
+                <p class="slider-text">New trending shoes</p>
+                <a href="#" class="shop-link slider-link block m-auto">SHOP COLLECTION</a>
+                {%- comment -%} <h2 class="slider-head-1">{{ block.settings.head-1 }}</h2>
                 <h2 class="slider-head-2">{{ block.settings.head-2 }}</h2>
                 <h2 class="slider-head-3">{{ block.settings.head-3 }}</h2>
                 <p class="slider-text">{{ block.settings.text }}</p>
                 <a href="{{ block.settings.link_collection }}" class="shop-link slider-link">{{ block.settings.link_collection_label |
-                    escape }}</a>
+                    escape }}</a> {%- endcomment -%}
             </div>
             ...
         </div>
@@ -28,8 +33,26 @@
     </div>
 </div>
 
+{%- style -%}
+    .swiper-slide{
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    .swiper-bg-image {
+        background-image: url('{{ block.settings.image | image_url }}');"
+    }
+
+    .swiper-bg-gradient {
+        background-image: {{ block.settings.color_background }};
+    }
+{%- endstyle -%}
+
 <style>
-    
 </style>
 
 {% schema %}
@@ -47,6 +70,12 @@
                     "type":"image_picker",
                     "id":"image",
                     "label":"Select image slide"
+                },
+                {
+                    "type": "color_background",
+                    "id": "color_background",
+                    "label": "Background",
+                    "default": "grey"
                 },
                 {
                     "type":"text",
@@ -101,5 +130,8 @@
             enabled: false,
             hide: true,
         },
+        // autoplay: {
+        //     delay: 5000,
+        // },
     });
 </script>
