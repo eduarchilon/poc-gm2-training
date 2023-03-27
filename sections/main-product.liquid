@@ -14,58 +14,85 @@
         <div class="product-detail-election">
             <h2 class="product-detail-name">{{ product.title | escape }}</h2>
             <h3 class="my-3" id="productPrice">{{ product.price | money }}</h3>
-            <div class="product-detail-rating my-10">&#x2605; &#x2605; &#x2605; &#x2605; &#x2605; (74 Rating)</div>
+            {%- comment -%} <div class="product-detail-rating my-10">&#x2605; &#x2605; &#x2605; &#x2605; &#x2605; (74
+                Rating)</div> {%- endcomment -%}
             <p class="product-detail-description">{{ product.description }}</p>
-            <div class="quantity-selector flex-col">
+            <div class="quantity-selector flex-col mt-6">
                 {% form 'product', product %}
-
                 {%- for option in product.options_with_values -%}
-                <label for="ProductSelect-option-{{ forloop.index0 }}">
-                    {{ option.name | escape }}
-                </label>
-                <select id="ProductSelect-{{ forloop.index0 }}" class="select-variant"
-                    data-index="option{{ forloop.index }}">
-                    {%- for value in option.values -%}
-                    <option value="{{ value | escape }}" {% if option.selected_value==value %} selected="selected" {%
-                        endif %}>
-                        {{ value | escape }}
-                    </option>
-                    {%- endfor -%}
-                </select>
+                <h5 class="mt-7 uppercase">{{ option.name | escape }}</g5>
+                    <div class="flex gap-3 select-variant mt-3" data-index="option{{ forloop.index }}"
+                        id="ProductSelect-{{ forloop.index0 }}">
+                        {% for value in option.values %}
+                        <input id="{{ value }}" class="" type="radio" form="{{ product_form_id }}"
+                            name="{{ option.name }}" value="{{ value | escape }}" {% if option.selected_value==value %}
+                            checked {% endif %}>
+                        <label class="lowercase radio-label p-3 rounded hover:bg-primary-brown bg-secondary-white hover:text-white" for="{{ value }}">
+                            {{ value }}
+                        </label>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                    {%- comment -%} {%- for option in product.options_with_values -%}
+                    <label for="ProductSelect-option-{{ forloop.index0 }}">
+                        {{ option.name | escape }}
+                    </label>
+                    <select id="ProductSelect-{{ forloop.index0 }}" class="select-variant"
+                        data-index="option{{ forloop.index }}">
+                        {%- for value in option.values -%}
+                        <option value="{{ value | escape }}" {% if option.selected_value==value %} selected="selected"
+                            {% endif %}>
+                            {{ value | escape }}
+                        </option>
+                        {%- endfor -%}
+                    </select>
 
-                {%- endfor -%}
+                    {%- endfor -%} {%- endcomment -%}
 
-                <div class="flex gap-2">
-                    <span
-                        class="cursor-pointer hover:bg-primary-brown bg-secondary-white hover:text-white py-4 px-6 rounded-md font-semibold"
-                        id="pdp-menos">-</span>
+                    <div class="flex gap-2 mt-[30px]">
+                        <span
+                            class="cursor-pointer hover:bg-primary-brown bg-secondary-white hover:text-white py-4 px-6 rounded-md font-semibold"
+                            id="pdp-menos">-</span>
 
-                    <input type="hidden" class="idvariant" name="id" id="idVariantProduct"
-                        value="{{ product.selected_or_first_available_variant.id }}">
-                    <input class="border border-third-grey py-4" type="number" name="quantity" id="quantity" min="1"
-                        value="1">
+                        <input type="hidden" class="idvariant" name="id" id="idVariantProduct"
+                            value="{{ product.selected_or_first_available_variant.id }}">
+                        <input class="border border-third-grey py-4" type="number" name="quantity" id="quantity" min="1"
+                            value="1">
 
-                    <span
-                        class="cursor-pointer hover:bg-primary-brown bg-secondary-white hover:text-white py-4 px-6 rounded-md font-semibold"
-                        id="pdp-mas">+</span>
-                </div>
-                <button
-                    class="hover:fill-white cursor-pointer flex gap-4 items-center cursor-pointer w-fit mt-3 hover:bg-primary-brown bg-secondary-white hover:text-white py-4 px-5 rounded-md"
-                    type="submit">
-                    <span class="cart-icon">{% render 'cart-icon' %}</span>
-                    Add to cart
-                </button>
-                {% endform %}
+                        <span
+                            class="cursor-pointer hover:bg-primary-brown bg-secondary-white hover:text-white py-4 px-6 rounded-md font-semibold"
+                            id="pdp-mas">+</span>
+                    </div>
+                    <button
+                        class="hover:fill-white cursor-pointer flex gap-4 items-center cursor-pointer w-fit mt-3 hover:bg-primary-brown bg-secondary-white hover:text-white py-4 px-5 rounded-md"
+                        type="submit">
+                        <span class="cart-icon">{% render 'cart-icon' %}</span>
+                        Add to cart
+                    </button>
+                    {% endform %}
             </div>
         </div>
     </div>
 </div>
 
 <div class="container">
-    {% for variant in product.variants %}
-    <p>Producto: {{variant.inventory_quantity}}</p>
-    {% endfor %}
+
 </div>
+
+<style>
+    input[type="radio"] {
+        display: none;
+    }
+
+    .radio-label {
+        cursor: pointer;
+    }
+
+    input[type="radio"]:checked+label {
+        background-color: black;
+        color: white;
+    }
+</style>
 
 <script>
     let url = document.getElementById("product-url")
@@ -85,11 +112,13 @@
 
 
     let selects = document.querySelectorAll(".select-variant")
-
     let options = {}
 
+
     for (let i = 0; i < selects.length; i++) {
-        options[`option${i + 1}`] = selects[i].value
+        //console.log(selects[i].children[0].value);
+        // options[`option${i + 1}`] = selects[i].value
+        options[`option${i + 1}`] = selects[i].children[0].value
         let props = selects[i].getAttribute("data-index")
         selects[i].addEventListener("change", (e) => getPropVariant(options, e.target.value, props))
         // selects[i].addEventListener("change", () => compareProps(options))
@@ -100,15 +129,14 @@
     let priceProduct = document.getElementById("productPrice")
 
     const getPropVariant = (options, selected, props) => {
+        //console.log(selected, props, options);
         let nombrePropiedad = props;
         let valorPropiedad = selected;
-
 
         let finalProduct = {};
         options[nombrePropiedad] = valorPropiedad; //{option1: 40, option2: blue}
         //let filterKeys = Object.keys(options); //["option1", "option2"]
         let valoresObjeto = Object.values(options);//["40", "blue"]
-
         variants[0].forEach(e => {
             if (e.option1 && !e.option2) {
                 if (e.option1 === valoresObjeto[0]) {
@@ -124,15 +152,12 @@
                 }
             }
         })
-        console.log("PRODUCTO FINAL", finalProduct);
+        //console.log("PRODUCTO FINAL", finalProduct);
         idProduct.value = finalProduct.id
         priceProduct.innerText = finalProduct.price
     }
 
 </script>
-
-
-
 
 <script>
     let quantity = document.getElementById("quantity")
@@ -181,7 +206,7 @@
     }
 
     .product-detail-img {
-        width: 60%;
+        width: 50%;
     }
 
     .product-detail-swipper {
@@ -194,7 +219,7 @@
     }
 
     .product-detail-election {
-        width: 35%;
+        width: 45%;
         font-family: var(--font-heading-family);
     }
 

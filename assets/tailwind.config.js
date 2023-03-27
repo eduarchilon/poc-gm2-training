@@ -20,6 +20,7 @@ tailwind.config = {
         300: '#dee2e6',
         400: '#f0ecec',
       },
+      black: '#000',
     },
   },
 }
