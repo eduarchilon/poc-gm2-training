@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="flex flex-col items-center gap-5 my-[60px] w-[100%]">
+        <h1 class="text-6xl font-bold py-[30px] uppercase">{{ 'general.search.search' | t }}</h1>
+        <form action="{{ routes.search_url }}" method="get" role="search" class="relative search-form w-[70%] flex">
+            <input type="text" placeholder="Search"
+                class="search_input border border-grey-50 px-[10px] rounded-full h-[40px] w-[100%]" name="q"
+                value="{{ search.terms | escape }}">
+            <button class="search__button" type="submit">{% render 'search-icon'%}</button>
+        </form>
+       
+        {%- if search.results_count -%}
+        <h3>{{ 'templates.search.results_with_count' | t: terms: search.terms, count: search.results_count }}</h3>
+        {%- elsif search.products_count == search.all_products_count -%}
+        <h3>{{ 'products.facets.product_count_simple' | t: count: search.products_count }}</h3>
+        {%- else -%}
+        <h3>{{ 'products.facets.product_count' | t: product_count: search.products_count, count:
+            search.all_products_count }}</h3>
+        {%- endif -%}
+    </div>
+
+
+    <ul class="search-grid mb-[120px]" role="list">
+        {%- for item in search.results -%}
+        {% render 'product-card', product: item %}
+        {%- endfor -%}
+    </ul>
+</div>
+
+<style>
+    .search_input,
+    .search_input::placeholder {
+        font-family: var(--font-heading-family);
+    }
+
+    .search-grid {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 30px;
+    }
+
+    @media (max-width: 990px) {
+        .search-grid {
+            grid-template-columns: auto;
+        }
+    }
+</style>
