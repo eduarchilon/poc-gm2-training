@@ -32,7 +32,7 @@
         "7f107ca9-7f04-4737-82e1-828075ee2e1f": {
           "type": "slide",
           "settings": {
-            "color_background": "linear-gradient(263deg, rgba(251, 51, 166, 1), rgba(127, 72, 176, 1) 50%, rgba(48, 145, 211, 1) 100%)",
+            "color_background": "linear-gradient(265deg, rgba(251, 51, 166, 1), rgba(127, 72, 176, 1) 39%, rgba(48, 145, 211, 1) 100%)",
             "link_collection": "\/",
             "link_collection_label": "Text link here",
             "head-1": "Head one",
