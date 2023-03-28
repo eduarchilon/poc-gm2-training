@@ -3,45 +3,38 @@
     "image_banner": {
       "type": "image-banner",
       "blocks": {
-        "6dd012e9-efcb-4128-92b8-5d42bfb177ea": {
-          "type": "image",
+        "bb1af61e-8eba-415a-8a4b-09e8b3e82281": {
+          "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/img_bg_1_jpg.webp",
-            "head-1": "MEN'S",
-            "head-2": "SHOES",
-            "head-3": "COLLECTION",
-            "text": "New trending shoes"
+            "color_background": "grey",
+            "link_collection": "\/",
+            "link_collection_label": "Text link here",
+            "head-1": "Head one",
+            "head-2": "Head two",
+            "head-3": "Head three",
+            "text": "Text paragraph and other texts"
           }
         },
-        "d349b817-a5bd-43f3-bce2-7fe9914ba0d3": {
-          "type": "image",
+        "cbfa6f7c-62cc-4474-bcdc-e632a8696b11": {
+          "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/img_bg_2_jpg.webp",
-            "head-1": "HUGE",
-            "head-2": "SALE",
-            "head-3": "50% OFF",
-            "text": "Big sale sandals"
-          }
-        },
-        "9c35dee2-c53d-4ab7-a783-71fd614224d6": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/img_bg_3_jpg.webp",
-            "head-1": "NEW",
-            "head-2": "ARRIVAL",
-            "head-3": "UP TO 30% OFF",
-            "text": "New stylish shoes for men"
+            "color_background": "grey",
+            "link_collection": "\/",
+            "link_collection_label": "Text link here",
+            "head-1": "Head one",
+            "head-2": "Head two",
+            "head-3": "Head three",
+            "text": "Text paragraph and other texts"
           }
         }
       },
       "block_order": [
-        "6dd012e9-efcb-4128-92b8-5d42bfb177ea",
-        "d349b817-a5bd-43f3-bce2-7fe9914ba0d3",
-        "9c35dee2-c53d-4ab7-a783-71fd614224d6"
+        "bb1af61e-8eba-415a-8a4b-09e8b3e82281",
+        "cbfa6f7c-62cc-4474-bcdc-e632a8696b11"
       ],
       "settings": {
-        "link_collection": "shopify:\/\/collections",
-        "link_collection_label": "Shop collection"
       }
     },
     "introduction": {
