@@ -1,0 +1,12 @@
+{% form 'product', product %}
+<input type="hidden" class="idvariant" name="id" id="idVariantProduct"
+    value="{{ product.selected_or_first_available_variant.id }}">
+<input type="number" name="quantity" id="quantity" min="1" value="1">
+<button type="submit">
+    Add to cart
+</button>
+{% endform %}
+
+{%- for item in cart.items -%}
+{%- comment -%} Iterar {%- endcomment -%}
+{%- endfor -%}

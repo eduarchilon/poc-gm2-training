@@ -5,22 +5,30 @@
             <!-- Slides -->
             {% for block in section.blocks %}
             {% if block.settings.image  %} 
-            <div class="swiper-slide text-white relative bg-grey-50 cursor-pointer text-center"
+            <div class="swiper-slide text-white relative bg-grey-50 cursor-pointer text-center flex flex-col justify-center items-center"
             style="background-image: url('{{ block.settings.image | image_url }}');">
-                <h2 class="slider-head-1">MEN'S</h2>
-                <h2 class="slider-head-2">SHOES</h2>
-                <h2 class="slider-head-3">COLLECTION</h2>
-                <p class="slider-text">New trending shoes</p>
-                <a href="#" class="shop-link slider-link block m-auto">SHOP COLLECTION</a>
+                <h2 class="text-[60px] uppercase font-bold">{{ block.settings.head-1 }}</h2>
+                <h2 class="text-[30px] uppercase tracking-[2px] font-medium">{{ block.settings.head-2 }}</h2>
+                <h2 class="slider-head-3 font-thin text-[35px]">{{ block.settings.head-3 }}</h2>
+                <p class="slider-text font-thin text-[20px] my-[20px]">{{ block.settings.text }}</p>
+                {% if block.settings.link_collection %}
+                <a href="{{ block.settings.link_collection }}" class="shop-link slider-link">
+                    {{ block.settings.link_collection_label | escape }}
+                </a>
+                {% endif %}
             </div>
             {% else %}
-            <div class="swiper-slide text-white relative bg-grey-50 cursor-pointer text-center"
+            <div class="swiper-slide text-white relative bg-grey-50 cursor-pointer text-center flex flex-col justify-center items-center"
             style="background: {{ block.settings.color_background }};">
-                <h2 class="slider-head-1">MEN'S</h2>
-                <h2 class="slider-head-2">SHOES</h2>
-                <h2 class="slider-head-3">COLLECTION</h2>
-                <p class="slider-text">New trending shoes</p>
-                <a href="#" class="shop-link slider-link block m-auto">SHOP COLLECTION</a>
+                <h2 class="text-[60px] uppercase font-bold">{{ block.settings.head-1 }}</h2>
+                <h2 class="text-[30px] uppercase tracking-[2px] font-medium">{{ block.settings.head-2 }}</h2>
+                <h2 class="slider-head-3 font-thin text-[35px]">{{ block.settings.head-3 }}</h2>
+                <p class="slider-text font-thin text-[20px] my-[20px]">{{ block.settings.text }}</p>
+                {% if block.settings.link_collection %}
+                <a href="{{ block.settings.link_collection }}" class="shop-link slider-link">
+                    {{ block.settings.link_collection_label | escape }}
+                </a>
+                {% endif %}
             </div>
             {% endif %}
             {% endfor %}
@@ -49,6 +57,12 @@
     }
 {%- endstyle -%}
 
+<style>
+    .slider-head-3, .slider-text {
+        font-family: var(--font-heading-family);
+    }
+</style>
+
 {% schema %}
 {
     "name":"test-swipper",
@@ -69,6 +83,42 @@
                     "id": "color_background",
                     "label": "Background",
                     "default": "grey"
+                },
+                {
+                    "type": "url",
+                    "id": "link_collection",
+                    "label": "Link",
+                    "default": "/"
+                },
+                {
+                    "type": "text",
+                    "id": "link_collection_label",
+                    "label": "Label text",
+                    "default": "Text link here"
+                },
+                {
+                    "type":"text",
+                    "id":"head-1",
+                    "label":"Text head 1",
+                    "default": "Head one"
+                },
+                {
+                    "type":"text",
+                    "id":"head-2",
+                    "label":"Head 2",
+                    "default": "Head two"
+                },
+                {
+                    "type":"text",
+                    "id":"head-3",
+                    "label":"Head 3",
+                    "default": "Head three"
+                },
+                {
+                   "type":"text",
+                   "id":"text",
+                   "label":"Anything text",
+                   "default": "Text paragraph and other texts"
                 }
             ]
         }

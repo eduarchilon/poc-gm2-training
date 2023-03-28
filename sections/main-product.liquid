@@ -77,6 +77,10 @@
 
 <div class="container">
 
+    
+    {%- comment -%} {% for variant in product.variants %}
+        <span>{{variant.inventory_quantity }} unidades disponibles.</p></span>
+    {% endfor %} {%- endcomment -%}
 </div>
 
 <style>
@@ -104,7 +108,7 @@
         .then(json => {
             // console.log(json.product.variants);
             variants.push(json.product.variants)
-            console.log("VARIANTES", variants[0]);
+            // console.log("VARIANTES", json.product);
         })
         .catch((error) => {
             console.error('Error:', error);
