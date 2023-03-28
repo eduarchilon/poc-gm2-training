@@ -28,11 +28,24 @@
             "head-3": "Head three",
             "text": "Text paragraph and other texts"
           }
+        },
+        "7f107ca9-7f04-4737-82e1-828075ee2e1f": {
+          "type": "slide",
+          "settings": {
+            "color_background": "red",
+            "link_collection": "\/",
+            "link_collection_label": "Text link here",
+            "head-1": "Head one",
+            "head-2": "Head two",
+            "head-3": "Head three",
+            "text": "Text paragraph and other texts"
+          }
         }
       },
       "block_order": [
         "bb1af61e-8eba-415a-8a4b-09e8b3e82281",
-        "cbfa6f7c-62cc-4474-bcdc-e632a8696b11"
+        "cbfa6f7c-62cc-4474-bcdc-e632a8696b11",
+        "7f107ca9-7f04-4737-82e1-828075ee2e1f"
       ],
       "settings": {
       }
