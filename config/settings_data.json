@@ -97,8 +97,25 @@
       },
       "promo": {
         "type": "promo",
+        "blocks": {
+          "475202c9-faac-47f4-a77c-6dacfa03e189": {
+            "type": "slide",
+            "settings": {
+              "text-promo": "25% off (Almost) Everything! Use Code: Summer Sale"
+            }
+          },
+          "40c87656-981d-475b-8254-0539c47689b1": {
+            "type": "slide",
+            "settings": {
+              "text-promo": "80% off Women's shoes"
+            }
+          }
+        },
+        "block_order": [
+          "475202c9-faac-47f4-a77c-6dacfa03e189",
+          "40c87656-981d-475b-8254-0539c47689b1"
+        ],
         "settings": {
-          "text-promo": "25% off (Almost) Everything! Use Code: Summer Sale"
         }
       }
     },
