@@ -1,18 +1,76 @@
 <div id="shopify-section-promo">
-    <div class="promo__container">
-      <h3>{{ section.settings.text-promo }}</h3>
-    </div>  
+   <div class="swiper">
+      <div class="swiper-wrapper w-[100%]">
+         {% for block in section.blocks %}
+         {% if block.settings.text-promo  %} 
+         <div class="swiper-slide promo__container">
+            <h3>{{ block.settings.text-promo }}</h3>
+         </div>
+         {% endif %}
+         {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-scrollbar"></div>
+   </div>
 </div>
+
+{%- style -%}
+    .swiper-slide{
+        height: inherit;
+        width: inherit;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+{%- endstyle -%}
+
+<script>
+   const swiper = new Swiper('.swiper', {
+       // Optional parameters
+       direction: 'horizontal',
+       loop: true,
+
+       // If we need pagination
+       pagination: {
+           el: '.swiper-pagination',
+       },
+
+       // Navigation arrows
+       navigation: {
+           nextEl: '.swiper-button-next',
+           prevEl: '.swiper-button-prev',
+       },
+
+       // And if we need scrollbar
+       scrollbar: {
+           enabled: false,
+           hide: true,
+       },
+       // autoplay: {
+       //     delay: 5000,
+       // },
+   });
+</script>
 
 {% schema %}
 {
    "name":"test-text",
-   "settings":[
+   "settings":[],
+   "blocks":[
       {
-         "type":"text",
-         "id":"text-promo",
-         "label":"text",
-         "default": "25% off (Almost) Everything! Use Code: Summer Sale"
+         "name": "Text slide",
+         "type": "slide",
+         "settings":[
+            {
+               "type":"text",
+               "id":"text-promo",
+               "label":"text",
+               "default": "25% off (Almost) Everything! Use Code: Summer Sale"
+            }
+         ]
       }
    ],
    "presets":[

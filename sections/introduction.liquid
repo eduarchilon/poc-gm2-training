@@ -1,16 +1,8 @@
 
 <div class="container">
-   <div class="swiper">
-      <div class="swiper-wrapper">
-         {% for block in section.blocks %}
-         <div class="swiper-slide">
-            {% if block.settings.introduction-text != blank %}
-            <h2 class="introduction-text py-[100px]">{{block.settings.introduction-text}}</h2>
-            {% endif %}
-         </div>
-         {% endfor %}
-      </div>
-   </div>
+   {% if section.settings.introduction-text != blank %}
+   <h2 class="introduction-text py-[100px]">{{section.settings.introduction-text}}</h2>
+   {% endif %}
 </div>
 
 
@@ -27,19 +19,11 @@
 {
    "name":"introduction",
    "settings":[
-   ],
-   "blocks": [
       {
-         "name": "Text slide",
-         "type": "slide",
-         "settings":[
-            {
-               "type":"text",
-               "id":"introduction-text",
-               "label": "write text",
-               "default": "It started with a simple idea: Create quality, well-designed products that I wanted myself."
-            }
-         ]
+         "type":"text",
+         "id":"introduction-text",
+         "label": "write text",
+         "default": "It started with a simple idea: Create quality, well-designed products that I wanted myself."
       }
    ],
    "presets":[
