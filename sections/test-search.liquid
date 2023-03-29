@@ -1,10 +1,11 @@
+<script src="{{ 'search.js' | asset_url }}" type="module"></script>
 <div class="container">
     <div class="flex flex-col items-center gap-5 my-[60px] w-[100%]">
         <h1 class="text-6xl font-bold py-[30px] uppercase">{{ 'general.search.search' | t }}</h1>
         <form action="{{ routes.search_url }}" method="get" role="search" class="relative search-form w-[70%] flex">
             <input type="text" placeholder="Search"
                 class="search_input border border-grey-50 px-[10px] rounded-full h-[40px] w-[100%]" name="q"
-                value="{{ search.terms | escape }}">
+                value="{{ search.terms | escape }}" id="input-search-page">
             <button class="search__button" type="submit">{% render 'search-icon'%}</button>
         </form>
        

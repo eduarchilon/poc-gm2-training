@@ -1,5 +1,7 @@
 {{ "header.css" | asset_url | stylesheet_tag }}
 
+<script src="{{ 'search.js' | asset_url }}" type="module"></script>
+
 <header id="header">
     <div class="container header-container">
         <div class="header__top">
@@ -13,9 +15,9 @@
                     
                 </a>
             </h1>
-            <form action="#" class="search-form">
-                <input type="search" placeholder="Search" class="search__input" />
-                <button class="search__button" type="button">{% render 'search-icon'%}</button>
+            <form id="search-header" action="{{ routes.search_url }}" method="get" class="search-form">
+                <input id="input-search-header" name="q" type="search" placeholder="Search" class="search__input" value="{{ search.terms | escape }}"/>
+                <button class="search__button" id="" type="submit">{% render 'search-icon'%}</button>
             </form>
             <div class="menu-icon">
                 <span class="menu-icon__hamburger" id="hamburger-button">{% render 'icon-hamburger' %}</span>

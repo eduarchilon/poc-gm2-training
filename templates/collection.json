@@ -9,10 +9,6 @@
         "menu": "product-list-menu"
       }
     },
-    "collection-recomended": {
-      "type": "collection-recomended",
-      "settings": {}
-    },
     "collection-products": {
       "type": "collection-products",
       "settings": {
@@ -67,7 +63,6 @@
   },
   "order": [
     "product-list-banner",
-    "collection-recomended",
     "collection-products",
     "partners"
   ]
