@@ -72,7 +72,7 @@
     "best-products": {
       "type": "best-products",
       "settings": {
-        "link_collection": "shopify:\/\/collections",
+        "link_collection": "shopify:\/\/collections\/all",
         "link_collection_label": "Shop all products",
         "section-title": "BEST SELLERS",
         "collection": "best-sellers"
