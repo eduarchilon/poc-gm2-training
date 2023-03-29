@@ -9,10 +9,6 @@
          {% endif %}
          {% endfor %}
       </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-scrollbar"></div>
    </div>
 </div>
 
@@ -37,21 +33,9 @@
        pagination: {
            el: '.swiper-pagination',
        },
-
-       // Navigation arrows
-       navigation: {
-           nextEl: '.swiper-button-next',
-           prevEl: '.swiper-button-prev',
+       autoplay: {
+           delay: 5000,
        },
-
-       // And if we need scrollbar
-       scrollbar: {
-           enabled: false,
-           hide: true,
-       },
-       // autoplay: {
-       //     delay: 5000,
-       // },
    });
 </script>
 
@@ -93,7 +77,8 @@
       text-align: center;
       padding: 14px 0;
       font-size: 20px;
-      font-weight: 100;
+      font-weight: 500;
+      cursor: pointer;
    }
 </style>
 
