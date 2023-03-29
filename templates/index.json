@@ -27,24 +27,11 @@
             "head-3": "Head three",
             "text": "Text paragraph and other texts"
           }
-        },
-        "24c8bd4c-78c4-4d46-a3b1-f9a00458ef4d": {
-          "type": "slide",
-          "settings": {
-            "color_background": "linear-gradient(248deg, rgba(240, 110, 105, 1), rgba(249, 208, 163, 1) 100%)",
-            "link_collection": "\/",
-            "link_collection_label": "Text link here",
-            "head-1": "Head one",
-            "head-2": "Head two",
-            "head-3": "Head three",
-            "text": "Text paragraph and other texts"
-          }
         }
       },
       "block_order": [
         "cbfa6f7c-62cc-4474-bcdc-e632a8696b11",
-        "7f107ca9-7f04-4737-82e1-828075ee2e1f",
-        "24c8bd4c-78c4-4d46-a3b1-f9a00458ef4d"
+        "7f107ca9-7f04-4737-82e1-828075ee2e1f"
       ],
       "settings": {
       }
