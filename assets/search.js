@@ -5,3 +5,5 @@ let headerSearch = document.getElementById('input-search-header')
 if (valueSearchPage.value !== '') {
   headerSearch.value = ''
 }
+
+
