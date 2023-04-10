@@ -5,6 +5,7 @@
       "blocks": {
         "cbfa6f7c-62cc-4474-bcdc-e632a8696b11": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/img_bg_2_jpg.webp",
             "color_background": "grey",
@@ -22,11 +23,11 @@
             "image": "shopify:\/\/shop_images\/img_bg_3_jpg.webp",
             "color_background": "grey",
             "link_collection": "shopify:\/\/collections\/men",
-            "link_collection_label": "Hombres",
-            "head-1": "tienda online",
-            "head-2": "mejores ofertas",
-            "head-3": "",
-            "text": "Text paragraph and other texts"
+            "link_collection_label": "Shop men collection",
+            "head-1": "Only in footwear",
+            "head-2": "Best prices!",
+            "head-3": "Right now",
+            "text": "On sale"
           }
         }
       },
