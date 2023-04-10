@@ -1,5 +1,5 @@
 <div id="shopify-section-promo">
-   <div class="swiper">
+   <div class="promo-swiper">
       <div class="swiper-wrapper w-[100%]">
          {% for block in section.blocks %}
          {% if block.settings.text-promo  %} 
@@ -24,7 +24,7 @@
 {%- endstyle -%}
 
 <script>
-   const swiper = new Swiper('.swiper', {
+   const promoSwipper = new Swiper('.promo-swiper', {
        // Optional parameters
        direction: 'horizontal',
        loop: true,

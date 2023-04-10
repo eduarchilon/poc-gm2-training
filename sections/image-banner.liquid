@@ -1,5 +1,5 @@
-<div class="z-[-9999] relative">
-    <div class="swiper">
+<div class="z-[999] relative">
+    <div class="banner-swiper">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper w-[100%] h-[600px]">
             <!-- Slides -->
@@ -132,7 +132,7 @@
 {% endschema %}
 
 <script>
-    const swiper = new Swiper('.swiper', {
+    const bannerSwiper = new Swiper('.banner-swiper', {
         // Optional parameters
         direction: 'horizontal',
         loop: true,
@@ -154,7 +154,7 @@
             hide: true,
         },
         // autoplay: {
-        //     delay: 5000,
+        //     delay: 1000,
         // },
     });
 </script>
