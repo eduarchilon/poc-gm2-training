@@ -34,14 +34,51 @@
                     </form>
                 </div>
             </div>
-            <div class="collection-all-grid">
-                {% for product in collection.products %}
-                {% render 'product-card', product: product %}
-                {% endfor %}
+            <div>
+                {% paginate collection.products by 8 %}
+                <div class="collection-all-grid">
+                    {% for product in collection.products %}
+                    {% render 'product-card', product: product %}
+                    {% endfor %}
+                </div>
+    
+                {% if paginate.pages > 1 %}
+                    <div class="my-[30px] flex border justify-between rounded-full m-auto w-fit">
+                        {%- if paginate.previous-%}
+                        <a class="hover:bg-grey-50 hover:rounded-s-full px-[20px] py-[10px]" href="{{ paginate.previous.url }}" class="{% if paginate.previous %}{% endif %}"">
+                            Previous
+                        </a>
+                        {% else %}
+                        <span class="text-grey-100 px-[20px] py-[10px]">
+                            Previous
+                        </span>
+                        {% endif %}
+                        
+                        {% for part in paginate.parts %}
+                        {% if part.title == paginate.current_page %}
+                        <span class="bg-grey-100 text-white px-[10px] py-[10px]">{{ part.title }}</span>
+                        {% else %}
+                        <a class="hover:bg-grey-50 px-[10px] py-[10px]" href="{{ part.url }}">{{ part.title }}</a>
+                        {% endif %}
+                        {% endfor %}
+    
+                        {%- if paginate.next -%}
+                        <a class="hover:bg-grey-50 hover:rounded-e-full px-[20px] py-[10px]" href="{{ paginate.next.url }}" class="{% if paginate.next %}{% endif %}"">
+                            Next
+                        </a>
+                        {% else %}
+                        <span class="text-grey-100 px-[20px] py-[10px]">
+                            Next
+                        </span>
+                        {% endif %}
+                    </div>
+                {% endif %}
+    
+                {% endpaginate %}
             </div>
-            <div class="flex items-center justify-center my-[50px]">
+            {%- comment -%} <div class="flex items-center justify-center my-[50px]">
                 <a href="{{ collection.url }}">All products</a>
-            </div>
+            </div> {%- endcomment -%}
         </div>
     </div>
 </div>
