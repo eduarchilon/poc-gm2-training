@@ -8,12 +8,12 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/img_bg_2_jpg.webp",
             "color_background": "grey",
-            "link_collection": "\/",
-            "link_collection_label": "Text link here",
-            "head-1": "Head one",
-            "head-2": "Head two",
-            "head-3": "Head three",
-            "text": "Text paragraph and other texts"
+            "link_collection": "shopify:\/\/collections\/women",
+            "link_collection_label": "Shop women collection",
+            "head-1": "Best products of the year",
+            "head-2": "Best seller!",
+            "head-3": "Right now!",
+            "text": "Only in footwear"
           }
         },
         "a0d49c49-ed06-4767-932c-8ef91c59b19e": {
