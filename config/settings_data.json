@@ -31,8 +31,8 @@
         "type": "header",
         "settings": {
           "menu": "main-menu",
-          "image": "shopify:\/\/shop_images\/brand-5_jpg.webp",
-          "image_size": 135
+          "image": "shopify:\/\/shop_images\/logo.png",
+          "image_size": 180
         }
       },
       "footer": {
