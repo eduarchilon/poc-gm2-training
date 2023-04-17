@@ -1,3 +1,4 @@
+{{ "option_selection.js" | shopify_asset_url | script_tag }}
 <div class="container">
     <span id="product-url" data-index="{{ product.url }}"></span>
     <p class="product-page__route">Home
@@ -8,7 +9,8 @@
     <div class="product-detail-main">
         <div class="product-detail-img">
             <div class="product-detail-swipper border border-third-grey">
-                <img class="product-detail__img" src="{{ product.featured_media | image_url }}" alt="">
+                <img id="product-image" class="product-detail__img" src="{{ product.featured_media | image_url }}"
+                    alt="">
             </div>
         </div>
         <div class="product-detail-election">
@@ -25,16 +27,18 @@
                     <div class="flex gap-3 select-variant mt-3" data-index="option{{ forloop.index }}"
                         id="ProductSelect-{{ forloop.index0 }}">
                         {% for value in option.values %}
-                        <input id="{{ value }}" class="" type="radio" form="{{ product_form_id }}"
+                        <input id="{{ value }}" class="input-radio" type="radio" form="{{ product_form_id }}"
                             name="{{ option.name }}" value="{{ value | escape }}" {% if option.selected_value==value %}
                             checked {% endif %}>
-                        <label class="lowercase radio-label p-3 rounded hover:bg-primary-brown bg-secondary-white hover:text-white" for="{{ value }}">
+                        <label
+                            class="lowercase radio-label p-3 rounded hover:bg-primary-brown bg-secondary-white hover:text-white"
+                            for="{{ value }}">
                             {{ value }}
                         </label>
                         {% endfor %}
                     </div>
                     {% endfor %}
-                {% endif %}
+                    {% endif %}
                     {%- comment -%} {%- for option in product.options_with_values -%}
                     <label for="ProductSelect-option-{{ forloop.index0 }}">
                         {{ option.name | escape }}
@@ -79,14 +83,47 @@
 
 <div class="container">
 
-    
+
     {%- comment -%} {% for variant in product.variants %}
-        <span>{{variant.inventory_quantity }} unidades disponibles.</p></span>
+    <span>{{variant.inventory_quantity }} unidades disponibles.</p></span>
     {% endfor %} {%- endcomment -%}
 </div>
 
+<div class="container">
+    {% form 'product', product %}
+    <select id="product-select" name="id">
+        {% for variant in product.variants %}
+        <option value="{{ variant.id }}" {% if variant==product.selected_or_first_available_variant
+            %}selected="selected" {% endif %}>
+            {{ variant.title }} - {{ variant.price | money }}
+        </option>
+        {% endfor %}
+    </select>
+    <input type="number" name="quantity" id="quantity" min="1" value="1"
+        class="input-text rounded-sm w-[80px] border-2 mx-4 pl-[50px] h-10" />
+    <button type="submit" class="browse-button py-5 px-20">
+        Add to cart
+    </button>
+    {% endform %}
+
+</div>
+
+<script>
+    var selectCallback = function (variant, selector) {
+        document.querySelector("#product-image").setAttribute("src", variant?.featured_image?.src);
+        document.getElementById("productPrice").innerHTML = Shopify.formatMoney(variant.price, '{{ amount }}');
+
+    }
+
+    new Shopify.OptionSelectors('product-select', {
+        product: {{ product | json }},
+        onVariantSelected: selectCallback,
+        enableHistoryState: true
+});
+</script>
+
 <style>
-    input[type="radio"] {
+    .input-radio[type="radio"] {
         display: none;
     }
 

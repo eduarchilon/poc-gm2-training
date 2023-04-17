@@ -158,8 +158,7 @@
                 <div class="my-[30px] flex border justify-between rounded-full m-auto w-fit">
                     {%- if paginate.previous -%}
                     <a class="hover:bg-grey-50 hover:rounded-s-full px-[20px] py-[10px]"
-                        href="{{ paginate.previous.url }}/#collection-grid"
-                        class="{% if paginate.previous %}{% endif %}"">
+                        href="{{ paginate.previous.url }}#collection-grid" class="{% if paginate.previous %}{% endif %}"">
                             Previous
                         </a>
                         {% else %}
@@ -172,14 +171,14 @@
                         {% if part.title == paginate.current_page %}
                         <span class="bg-grey-100 text-white px-[10px] py-[10px]">{{ part.title }}</span>
                         {% else %}
-                        <a class="hover:bg-grey-50 px-[10px] py-[10px]" href="{{ part.url }}/#collection-grid">{{
+                        <a class="hover:bg-grey-50 px-[10px] py-[10px]" href="{{ part.url }}#collection-grid">{{
                             part.title }}</a>
                         {% endif %}
                         {% endfor %}
 
                         {%- if paginate.next -%}
                         <a class="hover:bg-grey-50 hover:rounded-e-full px-[20px] py-[10px]"
-                            href="{{ paginate.next.url }}/#collection-grid" class="{% if paginate.next %}{% endif %}"">
+                            href="{{ paginate.next.url }}#collection-grid" class="{% if paginate.next %}{% endif %}"">
                             Next
                         </a>
                         {% else %}
